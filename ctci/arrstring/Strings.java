@@ -2,7 +2,7 @@ package ctci.arrstring;
 
 import java.util.Arrays;
 
-import javax.swing.plaf.TextUI;
+
 
 public class Strings { 
     public boolean isUnique(String str) { 
@@ -120,6 +120,25 @@ public class Strings {
             }
         }
         return table;
+    } 
+
+    boolean blindromePermutation2(String str) { 
+        int countOdd = 0; 
+        int[] table = new int[Character.getNumericValue('a') - Character.getNumericValue('z') + 1]; 
+        
+        for(char c : str.toCharArray()) {
+            int x = getCharNumber(c);  
+            if(x != -1) {  
+                table[x]++;
+                if(table[x] % 2 == 1) { 
+                    countOdd++;
+                }else { 
+                    countOdd--;
+                }
+            }
+        }
+        return countOdd <= 1;
+
     }
 
 
