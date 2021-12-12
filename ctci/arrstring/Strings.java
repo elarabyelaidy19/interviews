@@ -52,6 +52,29 @@ public class Strings {
         }
         return true;
 
+    } 
+
+    void replaceSpaces(char[] str, int actualLength) { 
+        int spaceCount = 0; 
+        int index, i = 0; 
+
+        for(i = 0 ; i < actualLength; i++) { 
+            if(str[i] == ' ')  
+                spaceCount++; 
+        }
+
+        index = actualLength + spaceCount * 3; 
+        for(i = actualLength - 1; i >= 0; i--) { 
+            if(str[actualLength] == ' ') { 
+                str[index - 1] = '0'; 
+                str[index - 2] = '2'; 
+                str[index - 3] = '%'; 
+                index -= 3;
+            }else { 
+                str[index - 1] = str[i]; 
+                i--;
+            }
+        }
     }
 
 
