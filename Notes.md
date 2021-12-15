@@ -20,4 +20,11 @@
                   /  \ 
                  8   12  
                 / \  / \ 
-               6  9 11  13
+               6  9 11  13 
+
+- Balanced Binary Tree 
+    * |left subtree height - right subtree height| <= 1.
+    * height of a tree equal number of nodes to the deepest node of the tree - 1. 
+    * null root is balanced and height -1
+- skewed tree 
+    * is a type of binary tree in which all the nodes have only one child or no child. 
