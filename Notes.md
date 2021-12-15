@@ -2,10 +2,11 @@
 
 ## Binary Trees
 - Full Binary Tree
-    * leaf nodes have no children, and all other nodes that have children mus have two children. 
+    * A full binary tree is a binary tree in which every node has either zero or two children. That is, no nodes have
+only one child. 
 - Compplete Binary Tree  
     * complete binary tree are binary heaps. 
-    * complete binary tree have all levels filled except the last level.
+    * complete binary tree have all levels filled except for perhabs the last level.
 - Perfect Binary Tree 
     * perfect binary tree have all levels filled and on the same level.
 ## Traversing Binary Trees 
@@ -24,7 +25,8 @@
 
 - Balanced Binary Tree 
     * |left subtree height - right subtree height| <= 1.
-    * height of a tree equal number of nodes to the deepest node of the tree - 1. 
+    * height of a tree equal number of edges from the deepest leave to the nodes. 
+    * deapth num of edges from the root to deepest leave of the tree. 
     * null root is balanced and height -1
 - skewed tree 
     * is a type of binary tree in which all the nodes have only one child or no child. 
