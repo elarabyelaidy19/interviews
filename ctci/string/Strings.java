@@ -1,4 +1,4 @@
-package ctci.arrstring;
+package ctci.string;
 
 import java.util.Arrays;
 
