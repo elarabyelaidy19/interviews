@@ -44,6 +44,8 @@ public class Trees {
 
     } 
 
+
+    // Sol 2
     int checkHeight(TreeNode root) { 
         if(root == null) {
             return -1;
