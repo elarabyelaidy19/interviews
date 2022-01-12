@@ -11,4 +11,19 @@ def max_profit(prices)
         r += 1 
     end 
     max_profit
-end
+end 
+
+def max_profit(prices) 
+    min = 100**100 
+    max = 0 
+    len = prices.length - 1
+
+    for i in 0..len 
+        if(prices[i] < min) 
+            min = prices[i] 
+        else 
+            max = [max, prices[i] - min].max 
+        end 
+    end 
+    max 
+end 
