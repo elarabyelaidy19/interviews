@@ -12,7 +12,7 @@ def contains_duplicate(nums)
 end 
 
 
-# another slo using sorting O(n)  
+# another slo using sorting O(nlogn)  
 # @param {Integer[]} nums
 # @return {Boolean}
 def contains_duplicate(nums)
@@ -22,6 +22,20 @@ def contains_duplicate(nums)
         return true if nums[i] == nums[i+1]
     end 
     false
-end
+end 
 
+
+# Third sol using Hash O(N) Time, O(N) Space
+
+def contains_duplicate(nums) 
+    hash = {} 
+    len = nums.length - 1 
+    for i in 0..len 
+        if hash.include?(nums[i]) 
+            return true 
+        end  
+        hash[nums[i]] = true 
+    end 
+    false
+end 
 
