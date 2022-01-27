@@ -49,9 +49,9 @@ puts is_uniqu?('bel')
 
 def is_uniqu?(str) 
     arr = str.chars.sort! 
-    arr.each_cons(2) { |a, b| a == b}  
-
+    arr.each_cons(2) { |a, b| return false if a == b }   
+    true
 end 
 
-puts is_uniqu?('slat')
+puts is_uniqu?('slata')
     
