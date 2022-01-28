@@ -11,8 +11,6 @@ def is_uniqu?(str)
     return true
 end  
 
-puts is_uniqu?('slbma')
-
 
 def is_unique(str) 
     arr = [false] * 128  
@@ -28,11 +26,6 @@ def is_unique(str)
     return true
 end 
 
-puts is_unique('beeby') 
-puts is_unique('string') 
-puts is_unique('blaha') 
-
-
 require 'set'
 def is_uniqu?(str) 
     set = Set.new
@@ -44,7 +37,6 @@ def is_uniqu?(str)
     return len == set.length
 end 
 
-puts is_uniqu?('bel')
 
 
 def is_uniqu?(str) 
@@ -53,5 +45,35 @@ def is_uniqu?(str)
     true
 end 
 
-puts is_uniqu?('slata')
-    
+
+
+
+
+def permutaion(s, t) 
+    sorted_s = s.chars.sort! 
+    sorted_t = t.chars.sort!
+
+    sorted_s == sorted_t
+end
+
+puts permutaion('fff', 'ff') 
+
+
+def permutaion(s,t) 
+    return false if s.length != t.length 
+    nums_of_chars = [0] * 128 
+
+    for i in 0..s.length - 1 
+        curr = s[i].ord - 'a'.ord 
+        nums_of_chars[curr] += 1 
+    end 
+    for i in 0..t.length - 1 
+        curr = t[i].ord - 'a'.ord 
+        nums_of_chars[curr] -= 1 
+
+        return false if nums_of_chars[curr] < 0  
+    end 
+    true 
+end 
+
+puts permutaion('fel', 'lef') 
