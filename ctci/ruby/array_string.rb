@@ -77,3 +77,25 @@ end
 puts permutaion('fel', 'lef')  
 
 
+
+def urlify(str) 
+    c = str.chars 
+    len = c.length
+    spaces = c.count(' ')   
+    new_length = len + spaces*2 
+    c1 = ""
+    for i in (len-1..0) 
+        if (c[i] == ' ') 
+            c1[new_length - 1] = '0'
+            c1[new_length - 2] = '2'
+            c1[new_length - 3] = '%'
+            new_length -= 3 
+        else 
+            c1[new_length] = c[i] 
+            new_length -= 1 
+        end 
+    end 
+    return c1
+end 
+
+puts urlify('Mr John Smith') 
