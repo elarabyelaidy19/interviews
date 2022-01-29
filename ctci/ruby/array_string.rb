@@ -47,8 +47,6 @@ end
 
 
 
-
-
 def permutaion(s, t) 
     sorted_s = s.chars.sort! 
     sorted_t = t.chars.sort!
@@ -76,4 +74,6 @@ def permutaion(s,t)
     true 
 end 
 
-puts permutaion('fel', 'lef') 
+puts permutaion('fel', 'lef')  
+
+
