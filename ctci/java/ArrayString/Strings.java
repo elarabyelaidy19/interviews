@@ -68,6 +68,35 @@ public class Strings {
     } 
 
 
+    static void URLify(String s) { 
+        char[] c = s.toCharArray();
+        int length = s.length();
+        int spaceCount = 0; 
+        int newLength = 0; 
 
-    
+        for(int i = 0; i < c.length; i+=1) { 
+            if(c[i] == ' ') 
+                spaceCount++;
+        }
+
+        newLength = length + (spaceCount * 2); 
+        char[] c1 = new char[newLength];
+        for(int i = length - 1; i >= 0 ; i--) { 
+            if(c[i] == ' ') { 
+                c1[newLength-1] = '0'; 
+                c1[newLength-2] = '2';
+                c1[newLength-3] = '%';
+                newLength -= 3;
+            } else { 
+                c1[newLength-1] = c[i]; 
+                newLength--;
+            } 
+        }
+    }
+
+    public static void main(String[] args) {
+        URLify("the dog left");
+    }
+
 }
+

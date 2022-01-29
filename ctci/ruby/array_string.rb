@@ -83,8 +83,8 @@ def urlify(str)
     len = c.length
     spaces = c.count(' ')   
     new_length = len + spaces*2 
-    c1 = ""
-    for i in (len-1..0) 
+    c1 = [] * new_length
+    (len).downto(0) do |i|
         if (c[i] == ' ') 
             c1[new_length - 1] = '0'
             c1[new_length - 2] = '2'
@@ -95,7 +95,13 @@ def urlify(str)
             new_length -= 1 
         end 
     end 
-    return c1
+    return c1.join('')
 end 
 
 puts urlify('Mr John Smith') 
+
+
+def urlify(str) 
+    str.gsub(/\s/,'%20')
+ end 
+ 
