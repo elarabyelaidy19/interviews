@@ -103,5 +103,48 @@ puts urlify('Mr John Smith')
 
 def urlify(str) 
     str.gsub(/\s/,'%20')
- end 
- 
+end 
+
+
+#============================================== 
+
+
+def get_char_num(c)  
+    a = 'a'.ord 
+    z = 'z'.ord 
+    val = c.ord 
+    if (val >= a && val <= z)
+        return val - a 
+    end 
+    return -1
+end 
+
+def frq_table(phrase) 
+    table = [] 
+    phrase.each_char do |c| 
+        x = get_char_num(c) 
+        if (x != -1) 
+            table[x]+=1 
+        end 
+    end 
+    return table 
+end  
+
+def check_max_one_odd(table) 
+    founded = false
+    for i in (0..table.length - 1) 
+        if(table[i] % 2 == 1) 
+            return false if founded 
+            founded = true 
+        end 
+    end 
+    return true
+end 
+
+def permutaion_plindrome(phrase) 
+    table = frq_table(phrase) 
+    check_max_one_odd(table)
+end 
+
+permutaion_plindrome("Tact Coa")
+

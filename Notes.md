@@ -16,10 +16,12 @@
     - (1 >> 1 = 0), (4 >> 1 = 2), (8 >> 3 = 1), (8 >> 1 = 4) 
     - Shift Right == Division by 2 
 - **Modulo**
-    - (a%2 == (a&1)
+    - (a%2 == (a&1) 
+- **Negation**
+    - -a = ~a + 1 
+    
 
 
-### Bitwise Operators
 
 
 
