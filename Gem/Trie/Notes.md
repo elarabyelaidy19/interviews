@@ -25,6 +25,7 @@
 
 # [Design Add and Search Words](./DesignAddSearchWords.java) 
 
+[Design Add and Search Words](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
 - add word to the trie. 
 - search word in the trie, if the word is match return true, if not return false. 
 - the dot is macth any charcter. if the word is starting with a dot, continue search all nodes that end with the same charcter. 
