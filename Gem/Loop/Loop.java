@@ -6,7 +6,7 @@ public class Loop {
             return true;
         }
 
-        int l = extracted(); 
+        int l = 0; 
         int r  = str.length() - 1;
         while(r > l) { 
             if(str.charAt(l) != str.charAt(r)) { 
@@ -18,17 +18,14 @@ public class Loop {
         return true;
     }
 
-    private int extracted() {
-        int l = 0;
-        return l;
-    }
+  
 
     public void reverseString(char[] str) { 
         if(str.length == 0 || str.length == 1) { 
             return;
         }
 
-        int l = extracted(); 
+        int l = 0; 
         int r = str.length - 1;
         while(r > l) {  
             swap(str, l, r); 
@@ -48,12 +45,12 @@ public class Loop {
             return true;
         } 
 
-        int l = extracted(); 
+        int l = 0; 
         int r = str.length() - 1; 
         while(r > l) { 
-            if(!Character.isLetterOrDigit(str.charAt(l)) { 
+            if(!Character.isLetterOrDigit(str.charAt(l))) { 
                 l++;
-            } else if (!Character.isLetterOrDigit(str.charAt(r)) { 
+            } else if (!Character.isLetterOrDigit(str.charAt(r))) { 
                 r--;
             } else { 
                 if(Character.toLowerCase(str.charAt(l)) != Character.toLowerCase(str.charAt(r))) 
@@ -153,7 +150,48 @@ public class Loop {
     }
 
 
+    public int countSubstrings(String s) { 
+        int count = 0; 
+        for(int i = 0; i < s.length(); i++) { 
+            count += checkPalindrome(s, i, i); // odd length palindrome
+            count += checkPalindrome(s, i, i+1); // even length palindrome
+        }
+        return count;
+    }
+
+    public int checkPalindrome(String str, int s, int e) { 
+        int count = 0; 
+        while(s >= 0 && e < str.length() && str.charAt(s) == str.charAt(e)) { 
+            count++; 
+            s--; 
+            e++;
+        }
+        return count;
+    } 
 
 
+    public int longestContunuesIncreasing(int[] nums) { 
+        int max = 0; 
+        int count = 0; 
+        for(int i = 0; i < nums.length; i++) { 
+            if(i == 0 || nums[i] > nums[i-1]) { 
+                count++; 
+            } else { 
+                max = Math.max(max, count); 
+                count = 1; 
+            }
+        }
+        return Math.max(max, count);
+    } 
+
+    public int longestContunuesIncreasing2(int[] nums) { 
+        int res = 0; 
+        int anchor = 0; 
+        for(int i = 0; i < nums.length; i++) { 
+            if(i > 0 && nums[i-1] > nums[i]) anchor = i; // update anchor when the continues seq end 
+            res = Math.max(res, i - anchor + 1); 
+        }
+        return res;
+    }
 }
 }

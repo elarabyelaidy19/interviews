@@ -29,4 +29,14 @@
 # [ robot return to origin](https://leetcode.com/problems/robot-return-to-origin/) 
 - robot return to origion when i'ts x and y == 0. 
 - left --x , right ++x 
-- up --y , down ++y
+- up --y , down ++y 
+
+# [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) 
+- check for plindrome using two converging pointers, this gives us the number of odd palindromes.
+- to check for even plindrome, add one to the right pointer. 
+
+
+# [longest continues increasing subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) 
+- sliding window, keep track of the longest increasing subsequence. 
+- if the condition fails, update anchor to the current index, and start new sequence, check if the current sequnce is greater than the previous one. 
+
