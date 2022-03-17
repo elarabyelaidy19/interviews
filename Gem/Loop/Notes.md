@@ -24,4 +24,9 @@
 
 # [PeakMountainIndexArray](https://leetcode.com/problems/peak-index-in-a-mountain-array/) 
 - search for the first number that is greater than its neighbors. arr[i] > arr[i+1] 
-- binary search array, return the index of the number at left if it is greater than its neighbors.
+- binary search array, return the index of the number at left if it is greater than its neighbors. 
+
+# [ robot return to origin](https://leetcode.com/problems/robot-return-to-origin/) 
+- robot return to origion when i'ts x and y == 0. 
+- left --x , right ++x 
+- up --y , down ++y

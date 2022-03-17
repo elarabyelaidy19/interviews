@@ -6,7 +6,7 @@ public class Loop {
             return true;
         }
 
-        int l = 0; 
+        int l = extracted(); 
         int r  = str.length() - 1;
         while(r > l) { 
             if(str.charAt(l) != str.charAt(r)) { 
@@ -18,12 +18,17 @@ public class Loop {
         return true;
     }
 
+    private int extracted() {
+        int l = 0;
+        return l;
+    }
+
     public void reverseString(char[] str) { 
         if(str.length == 0 || str.length == 1) { 
             return;
         }
 
-        int l = 0; 
+        int l = extracted(); 
         int r = str.length - 1;
         while(r > l) {  
             swap(str, l, r); 
@@ -43,7 +48,7 @@ public class Loop {
             return true;
         } 
 
-        int l = 0; 
+        int l = extracted(); 
         int r = str.length() - 1; 
         while(r > l) { 
             if(!Character.isLetterOrDigit(str.charAt(l)) { 
@@ -63,7 +68,7 @@ public class Loop {
     int digitSum(int n) { 
         int sum = 0; 
 
-        while(n--) { 
+        while(n > 0) { 
             int lastDigit = n % 10; 
             sum += lastDigit; 
             n /= 10; 
@@ -106,6 +111,7 @@ public class Loop {
                 return i; 
             return 0;
         }
+        return 0;
     }
     // O(logn) binary search
     int peakIndexMountainArray(int[] arr) { 
@@ -120,7 +126,33 @@ public class Loop {
                 r = m;
         }
         return l;
+    } 
+
+
+
+    public boolean judgeCircle(String moves) {
+        int x = 0;
+        int y = 0;
+        for (char c : moves.toCharArray()) {
+            switch (c) {
+                case 'U':
+                    y--;
+                    break;
+                case 'D':
+                    y++;
+                    break;
+                case 'L':
+                    x--;
+                    break;
+                case 'R':
+                    x++;
+                    break;
+            }
+        }
+        return x == 0 && y == 0;
     }
+
+
 
 
 }
