@@ -41,4 +41,6 @@
 - if the condition fails, update anchor to the current index, and start new sequence, check if the current sequnce is greater than the previous one. 
 
 # [pascal triangle](https://leetcode.com/problems/pascals-triangle/) 
-- 
+- use a 2d array to store the triangle. 
+- the first and last element of every row is 1. 
+- the current element is the sum of the two elements above. element at index i is prev[i-1] + prev[i].
