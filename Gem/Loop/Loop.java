@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Loop { 
 
     public boolean isPlindrome(String str) { 
@@ -192,6 +195,28 @@ public class Loop {
             res = Math.max(res, i - anchor + 1); 
         }
         return res;
+    } 
+
+
+    public ArrayList<List<Integer>> generate(int numRows) {
+        ArrayList<List<Integer>> allrows = new ArrayList<List<Integer>>(); 
+        List<Integer> firstRow = new ArrayList<Integer>(); 
+        firstRow.add(1); 
+        allrows.add(firstRow); 
+        
+        for(int i = 1; i < numRows; i++) { 
+            List<Integer> prev_arr = allrows.get(i-1); 
+            List<Integer> row = new ArrayList<>(); 
+            
+            row.add(1);
+            for(int j = 1; j<i; j++) { 
+                row.add(prev_arr.get(j-1) + prev_arr.get(j)); 
+                
+            } 
+            row.add(1); 
+            allrows.add(row);
+        }
+        return allrows;
     }
 }
 }

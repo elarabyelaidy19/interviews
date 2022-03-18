@@ -40,3 +40,5 @@
 - sliding window, keep track of the longest increasing subsequence. 
 - if the condition fails, update anchor to the current index, and start new sequence, check if the current sequnce is greater than the previous one. 
 
+# [pascal triangle](https://leetcode.com/problems/pascals-triangle/) 
+- 
