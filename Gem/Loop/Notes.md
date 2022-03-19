@@ -43,4 +43,17 @@
 # [pascal triangle](https://leetcode.com/problems/pascals-triangle/) 
 - use a 2d array to store the triangle. 
 - the first and last element of every row is 1. 
-- the current element is the sum of the two elements above. element at index i is prev[i-1] + prev[i].
+- the current element is the sum of the two elements above. element at index i is prev[i-1] + prev[i]. 
+
+# [implement strStr()](https://leetcode.com/problems/implement-strstr/) 
+- if the needle is empty, return 0.
+- if the needle is not empty, check if the needle is in the haystack. 
+- chech if the current char is equal to the needle char at index i, then substr the hystack form i to i+ length of needle and compare it with needle. 
+
+# [best time to buy and sell stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) 
+- using kadane's algorithm, use tow variable max and min, loop through array and update min, max.  
+- min is the minimum of the current element and the current min.
+- max is the max between the current max and the current value - min. 
+
+
+
