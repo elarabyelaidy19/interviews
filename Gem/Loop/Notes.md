@@ -56,4 +56,19 @@
 - max is the max between the current max and the current value - min. 
 
 
+# [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) 
+- store first word as the current prefix. 
+- loop through the rest of words, if the current word does not start with the current prefix, substring from 0 to the length of the current word. 
+- ### Two 
+- first word to array, loop through the rest of words, compare the current char of the word with the the current char of the array. if they are not equal, or the index is out of bound, return the current prefix.
+- if not, update the prefix with the current char and updaate index.
 
+
+# [Jump Game](https://leetcode.com/problems/jump-game/) 
+- start from the end of the array, last index is the goal, loop through the array backwards, if the current ele + current index is greater than the goal, update the goal to the current index. 
+- return goal <= 0. 
+
+
+# [increasing triplet subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) 
+- three varaiables, max1, max2, max3. loop compare the curr if less than max1, update max1. if less than max2, update max2. else return true. 
+- otherwise, return false.
