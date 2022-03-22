@@ -23,3 +23,7 @@ public class Solution {
 ## [merge two sorted arrays](https://leetcode.com/problems/merge-sorted-array/) 
 - arrays sorted, tow pointers p1, p2, maximum in puts in last pos.   
 - if p1 = 0, nums1[p] = nums2[p2]
+
+## [product of array except self](https://leetcode.com/problems/product-of-array-except-self/) 
+- left, product of all left, right, product of all left and right. 
+- res[i] = left[i] * right[i]

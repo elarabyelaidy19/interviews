@@ -51,4 +51,33 @@ public class DArray {
             }
         }
     }
+
+
+    public int[] productOfArrayExceptSelf(int[] nums) { 
+        int n = nums.length; 
+        int[] res = new int[n]; 
+
+        int left = 1;
+        for(int i = 0; i < n; i++) { 
+            if(i > 0) 
+                left = left * nums[i-1]; 
+            res[i] = left;
+        }
+
+        int right = 1;
+        for(int i = n-1; i >= 0; i--) { 
+            if(n-1 > i)  
+                right = right * nums[i+1]; 
+            res[i] *= right;
+        }
+        return res;
+    }
+
+    public int missingNumber(int[] nums) { 
+        int n = nums.length+1; 
+        int sum = (n * (n-1))/2; 
+        for(int num : nums)  
+            sum -= num; 
+        return sum;
+    }
 }
