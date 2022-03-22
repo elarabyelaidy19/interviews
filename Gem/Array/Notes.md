@@ -26,4 +26,10 @@ public class Solution {
 
 ## [product of array except self](https://leetcode.com/problems/product-of-array-except-self/) 
 - left, product of all left, right, product of all left and right. 
-- res[i] = left[i] * right[i]
+- res[i] = left[i] * right[i] 
+
+## [maximum average subarray](https://leetcode.com/problems/maximum-average-subarray-i/) 
+- sliding window, sum first k elements, sub k-i, max between sum and res. 
+
+## [missing number](https://leetcode.com/problems/missing-number/) 
+- sum of all elements in range (n * (n+1) / 2) - sum the actual elements in the array.
