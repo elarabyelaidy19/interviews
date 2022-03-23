@@ -32,4 +32,12 @@ public class Solution {
 - sliding window, sum first k elements, sub k-i, max between sum and res. 
 
 ## [missing number](https://leetcode.com/problems/missing-number/) 
-- sum of all elements in range (n * (n+1) / 2) - sum the actual elements in the array.
+- sum of all elements in range (n * (n+1) / 2) - sum the actual elements in the array. 
+
+
+
+# Matrices 
+
+[range sum query 2d](https://leetcode.com/problems/range-sum-query-2d-immutable/) 
+- prefix sum matrix. result = matrix[r2][c2] - (matrix[r2][c1-1] - matrix[r1-1][c2] + matrix[r1-1][c1-1] 
+- [Explaination](https://www.youtube.com/watch?v=rkLDDxOcJxU&ab_channel=AlgorithmsMadeEasy) 
