@@ -38,6 +38,12 @@ public class Solution {
 
 # Matrices 
 
-[range sum query 2d](https://leetcode.com/problems/range-sum-query-2d-immutable/) 
+## [range sum query 2d](https://leetcode.com/problems/range-sum-query-2d-immutable/) 
 - prefix sum matrix. result = matrix[r2][c2] - (matrix[r2][c1-1] - matrix[r1-1][c2] + matrix[r1-1][c1-1] 
 - [Explaination](https://www.youtube.com/watch?v=rkLDDxOcJxU&ab_channel=AlgorithmsMadeEasy) 
+
+
+## [keyboard row](https://leetcode.com/problems/keyboard-row/)
+- map every letter of row to index {c => i} index is the row number 
+- for every char in word if the map index of all chars of words does't match break word can not added
+
