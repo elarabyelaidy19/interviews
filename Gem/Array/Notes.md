@@ -47,3 +47,5 @@ public class Solution {
 - map every letter of row to index {c => i} index is the row number 
 - for every char in word if the map index of all chars of words does't match break word can not added
 
+## [toeplitz matrix](https://leetcode.com/problems/toeplitz-matrix/) 
+- matrix[i][j] != matrix[i+1][j+1] and index within range.
