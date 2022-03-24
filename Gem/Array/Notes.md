@@ -49,3 +49,15 @@ public class Solution {
 
 ## [toeplitz matrix](https://leetcode.com/problems/toeplitz-matrix/) 
 - matrix[i][j] != matrix[i+1][j+1] and index within range.
+
+
+## [spiral matrix](https://leetcode.com/problems/spiral-matrix/) 
+- index within range, divides into 4 parts, finish update index. 
+- top -> right -> bottom -> left 
+
+![spiral](https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg) 
+
+
+## [rotate image](https://leetcode.com/problems/rotate-image/) 
+- transpose matrix matrix[i][j] = matrix[j][i]
+- reverse matrix matrix[i][j] = matrix[i][n-j-1]

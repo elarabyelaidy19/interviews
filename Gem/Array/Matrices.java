@@ -1,5 +1,6 @@
 package Gem.Array;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -85,5 +86,58 @@ public class Matrices {
             }
         }
         return true;
+    } 
+
+
+    public List<Integer> spiralMatrix(int[][] matrix) { 
+        List<Integer> res = new ArrayList<>();
+        int top = 0; 
+        int bottom = matrix.length-1; 
+        int left = 0; 
+        int right = matrix[0].length-1; 
+
+        while(true) { 
+            
+            for(int i = left; i <= right; i++) res.add(matrix[top][i]); 
+            top++; 
+            if(top > bottom || left > right) break; 
+            
+            for(int i = top; i <= bottom; i++) res.add(matrix[i][right]); 
+            right--; 
+            if(left > right || top > bottom) break;
+
+            for(int i = right; i >= left; i--) res.add(matrix[bottom][i]); 
+            bottom--;
+            if(left > right || top > bottom) break; 
+
+            for(int i = bottom; i >= top; i--) res.add(matrix[i][left]);
+            left++;
+            if(left > right || top > bottom) break;
+        }
+        return res;
+    }
+
+
+    public void rotate(int[][] matrix) { 
+        int len = matrix.length; 
+        
+
+        // transpose 
+        for(int i = 0; i < len; i++) { 
+            for(int j = i; j < len; j++) { 
+                int temp = matrix[i][j]; 
+                matrix[i][j] = matrix[j][i]; 
+                matrix[j][i] = temp;
+            }
+        }
+
+        // reverse
+        for(int i = 0; i < len; i++) { 
+            for(int j = 0; j < len/2; j++) { 
+                int temp = matrix[i][len-j-1]; 
+                matrix[i][len-j-1] = matrix[i][j]; 
+                matrix[i][j] = temp;
+            }
+        }
     }
 }
