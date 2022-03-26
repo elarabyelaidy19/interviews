@@ -66,3 +66,4 @@ public class Solution {
 ## [set matrix zeros](https://leetcode.com/problems/set-matrix-zeroes/)
 - use set to track rows and cols to be set to 0. 
 
+## [valid sudoku](https://leetcode.com/problems/valid-sudoku/)

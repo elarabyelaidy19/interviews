@@ -171,21 +171,27 @@ public class Matrices {
     }
 
     public boolean isValidSudoku(char[][] board) {
-        Set<String> seen = new HashSet<>();
+        Set<String> set = new HashSet<>();
 
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                char currN = board[i][j];
-
-                if (currN != '.')
-                    if (!seen.add(currN + " in row" + i) ||
-                            !seen.add(currN + " in col" + j) ||
-                            !seen.add(currN + "in box" + i / 3 + "-" + j / 3))
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board[row].length; col++) {
+                char val = board[row][col];
+                if (val != '.') {
+                    int block = (row / 3 * 3) + (col / 3);
+                    if (set.contains("r" + row + val) ||
+                            set.contains("c" + col + val) ||
+                            set.contains("b" + block + val))
                         return false;
-
+                    else {
+                        set.add("r" + row + val);
+                        set.add("c" + col + val);
+                        set.add("b" + block + val);
+                    }
+                }
             }
         }
 
         return true;
     }
+
 }
