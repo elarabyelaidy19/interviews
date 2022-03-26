@@ -60,4 +60,9 @@ public class Solution {
 
 ## [rotate image](https://leetcode.com/problems/rotate-image/) 
 - transpose matrix matrix[i][j] = matrix[j][i]
-- reverse matrix matrix[i][j] = matrix[i][n-j-1]
+- reverse matrix matrix[i][j] = matrix[i][n-j-1] 
+
+
+## [set matrix zeros](https://leetcode.com/problems/set-matrix-zeroes/)
+- use set to track rows and cols to be set to 0. 
+

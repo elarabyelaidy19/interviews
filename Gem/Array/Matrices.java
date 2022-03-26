@@ -2,9 +2,11 @@ package Gem.Array;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Matrices {
     class NumMatrix {
@@ -139,5 +141,51 @@ public class Matrices {
                 matrix[i][j] = temp;
             }
         }
+    }
+
+    class Solution {
+        public void setZeroes(int[][] matrix) {
+            int R = matrix.length;
+            int C = matrix[0].length;
+
+            Set<Integer> row = new HashSet<>();
+            Set<Integer> col = new HashSet<>();
+
+            for (int i = 0; i < R; i++) {
+                for (int j = 0; j < C; j++) {
+                    if (matrix[i][j] == 0) {
+                        row.add(i);
+                        col.add(j);
+                    }
+                }
+            }
+
+            for (int i = 0; i < R; i++) {
+                for (int j = 0; j < C; j++) {
+                    if (row.contains(i) || col.contains(j))
+                        matrix[i][j] = 0;
+                }
+            }
+
+        }
+    }
+
+    public boolean isValidSudoku(char[][] board) {
+        Set<String> seen = new HashSet<>();
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                char currN = board[i][j];
+
+                if (currN != '.')
+                    if (!seen.add(currN + " in row" + i) ||
+                            !seen.add(currN + " in col" + j) ||
+                            !seen.add(currN + "in box" + i / 3 + "-" + j / 3))
+                        return false;
+
+            }
+        }
+
+        return true;
     }
 }
