@@ -194,4 +194,59 @@ public class Matrices {
         return true;
     }
 
+
+    class GameofLife {
+
+        private int die = 2;
+        private int live = 3;
+
+        public void gameOfLife(int[][] board) {
+            int row = board.length;
+            int col = board[0].length;
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    int countAround = countLive(i, j, board);
+
+                    if (board[i][j] == 0 && countAround == 3) {
+                        board[i][j] = live;
+                    } else if (board[i][j] == 1) {
+                        if (countAround == 2 || countAround == 3) {
+                            continue;
+                        }
+                        if (countAround < 2 || countAround > 3)
+                            board[i][j] = die;
+                    }
+                }
+            }
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    if (board[i][j] == live)
+                        board[i][j] = 1;
+
+                    if (board[i][j] == die)
+                        board[i][j] = 0;
+                }
+            }
+        }
+
+        private int countLive(int r, int c, int[][] board) {
+            int[][] directions = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 1 }, { 1, -1 }, { -1, 1 },
+                    { -1, -1 } };
+            int count = 0;
+
+            for (int[] dir : directions) {
+                int x = r + dir[0];
+                int y = c + dir[1];
+                if (x >= 0 && y >= 0 && x < board.length && y < board[0].length) {
+                    if (board[x][y] == 1 || board[x][y] == die)
+                        count++;
+                }
+            }
+            return count;
+
+        }
+    }
+
 }

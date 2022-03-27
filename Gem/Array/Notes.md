@@ -66,4 +66,8 @@ public class Solution {
 ## [set matrix zeros](https://leetcode.com/problems/set-matrix-zeroes/)
 - use set to track rows and cols to be set to 0. 
 
-## [valid sudoku](https://leetcode.com/problems/valid-sudoku/)
+## [valid sudoku](https://leetcode.com/problems/valid-sudoku/) 
+- 
+
+# [game of life](https://leetcode.com/problems/game-of-life/) 
+- count num of ones or dies in neighbors. 
