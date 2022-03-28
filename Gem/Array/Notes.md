@@ -71,3 +71,5 @@ public class Solution {
 
 # [game of life](https://leetcode.com/problems/game-of-life/) 
 - count num of ones or dies in neighbors. 
+
+
