@@ -40,8 +40,12 @@ public class Solution {
 ## [find numbers with even number of digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/)
 - count number of digits for every num, if even, even+=1.
 
+## [squares of a sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+- O(NLogn) squaring, then sorting. 
+- O(N) two pointers Abs of left and right.
 
-
+## [duplicate zeros](https://leetcode.com/problems/duplicate-zeros/)
+- count number of zeros, start backward, len + 0's - 1, if zero, wire it minus write another 0, if not, add num. to end.
 
 
 # Matrices 
