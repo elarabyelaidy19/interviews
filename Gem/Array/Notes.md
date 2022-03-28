@@ -34,6 +34,14 @@ public class Solution {
 ## [missing number](https://leetcode.com/problems/missing-number/) 
 - sum of all elements in range (n * (n+1) / 2) - sum the actual elements in the array. 
 
+## [max consecutive ones](https://leetcode.com/problems/max-consecutive-ones/) 
+- sliding windows, max(currentCount, max)
+
+## [find numbers with even number of digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/)
+- count number of digits for every num, if even, even+=1.
+
+
+
 
 
 # Matrices 

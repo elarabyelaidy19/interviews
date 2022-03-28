@@ -94,4 +94,43 @@ public class DArray {
 
         return res/k;
     }
+
+    public int maxConsecutiveOnes(int[] nums) { 
+        int max = 0; 
+        int maxSofar = 0; 
+        for(int i = 0; i < nums.length; i++) { 
+            if(nums[i] == 1) { 
+                maxSofar += 1; 
+                max = Math.max(max, maxSofar);
+            } else { 
+                max = 0;
+            }
+        }
+        return max;
+    }
+
+
+    // ======================================================
+
+    public int findNumbers(int[] nums) {
+        int even = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int curr = nums[i];
+            if (countDigit(curr) % 2 == 0) {
+                even += 1;
+            } else {
+                continue;
+            }
+        }
+        return even;
+    }
+
+    public int countDigit(int n) {
+        int cnt = 0;
+        while (n != 0) {
+            cnt += 1;
+            n /= 10;
+        }
+        return cnt;
+    }
 }
