@@ -1,4 +1,5 @@
-# prefix sum  
+# Arrays
+## prefix sum  
 ```java 
 public class Solution {
     public int[] prefixes(int[] A) {
@@ -46,6 +47,13 @@ public class Solution {
 
 ## [duplicate zeros](https://leetcode.com/problems/duplicate-zeros/)
 - count number of zeros, start backward, len + 0's - 1, if zero, wire it minus write another 0, if not, add num. to end.
+
+## [remove element](https://leetcode.com/problems/remove-element/)
+- **1** two pointers, if not equal, keep in l, if equal, move forward(l++).  
+- **2** two pointers, if equal, move to last one, and delete(r--).
+
+## [remove duplicates from sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) 
+- fast and slow pointer, if not equal, l++, nums[l] = nums[r]. 
 
 
 # Matrices 

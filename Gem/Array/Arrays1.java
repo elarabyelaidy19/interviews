@@ -2,7 +2,7 @@ package Gem.Array;
 
 import java.util.Arrays;
 
-public class DArray {
+public class Arrays1 {
     class NumArray {
 
         private int prefixSum[];
@@ -164,4 +164,48 @@ public class DArray {
         }
         return res;
     }
+
+
+    // ==============================================================
+    // O(N), O(1)
+    public int removeElemnts(int[] nums, int val) { 
+        int i = 0; 
+        for(int j = 0; j < nums.length; j++) { 
+            if(nums[i] != val) { 
+                nums[i] = nums[j];
+                i++;
+            } 
+        }
+        return i;
+
+    }
+
+    public int removeElemnts2(int[] nums, int val) { 
+        int l = 0; 
+        int r = nums.length;
+        while(r > l) {
+            if(nums[l] == val) { 
+                nums[l] = nums[r-1]; 
+                r--;
+            } else { 
+                l++;
+            }
+        }
+        return r;
+    
+    }
+
+    // ==============================================================
+    // O(N), O(1)
+    public int removeDuplicates(int[] nums) { 
+        int l = 0; 
+        for(int r = 0; r < nums.length; r++) {  
+            if(nums[l] != nums[r]) { 
+                l++; 
+                nums[l] = nums[r];
+            }
+        }
+        return l + 1; 
+    }
+    
 }
