@@ -1,0 +1,16 @@
+# Sorting
+
+## [valid anagram](https://leetcode.com/problems/valid-anagram/) 
+- **ONE** array of chars and sorting **O(n log n)**
+- **TWO** Fre Array == 0 **O(n)**
+
+## [contains duplicate](https://leetcode.com/problems/contains-duplicate/)
+- **ONE** sort array **O(n log n, O(1))** 
+- **TWO** HashSet **O(N), O(N)**  
+
+## [maximum product](https://leetcode.com/problems/maximum-product/)
+- sort array multiply last three, first two min might be negative 
+
+## [kth largest element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- sort n - k 
+
