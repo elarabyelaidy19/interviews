@@ -87,4 +87,23 @@ public class Sorting {
         }
         return list.toArray(new int[list.size()][]);
     }
+
+    // ============================================================================
+
+    public String largestNumber(int[] nums) { 
+        String[] str_num = new String[nums.length];
+        for(int i = 0; i < nums.length; i++) { 
+            str_num[i] = String.valueOf(nums[i]);
+        }
+
+        Arrays.sort(str_num, (a, b) -> (b + a).compareTo(a + b));
+        if(str_num[0].charAt(0) == '0') 
+            return "0";
+        
+        StringBuilder sb = new StringBuilder(); 
+        for(String s : str_num) { 
+            sb.append(s);
+        }
+        return sb.toString();
+    }
 }
