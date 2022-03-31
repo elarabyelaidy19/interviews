@@ -2,6 +2,7 @@ package Gem.Sorting;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Set;
 
 public class Sorting {
@@ -71,5 +72,19 @@ public class Sorting {
         return Math.max(max1, max2);
     }
 
-    // ============================================================================
+    // ============================================================================ 
+
+    public int[][] mergeIntervals(int[][] intervals) { 
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0])); 
+        LinkedList<int[]> list = new LinkedList<>(); 
+
+        for(int[] interval : intervals) { 
+            if(list.isEmpty() || list.getLast()[1] < interval[0]) { 
+                list.add(interval); 
+            } else { 
+                list.getLast()[1] = Math.max(list.getLast()[1], interval[1]);
+            }
+        }
+        return list.toArray(new int[list.size()][]);
+    }
 }

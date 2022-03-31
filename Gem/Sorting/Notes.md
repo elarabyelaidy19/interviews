@@ -14,3 +14,6 @@
 ## [kth largest element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 - sort n - k 
 
+## [merge intervals](https://leetcode.com/problems/merge-intervals/)
+- sort by start, merge if overlap, max(lsat[1], current[1])
+
