@@ -19,3 +19,7 @@
 
 ## [largest number](https://leetcode.com/problems/largest-number/)
 - sort, compare tow number, a+b <=> b+a
+
+## [maximum length of pair chain](https://leetcode.com/problems/maximum-length-of-pair-chain/) 
+- sort array on p[1] 
+- next pair[0] > prev pair[1]

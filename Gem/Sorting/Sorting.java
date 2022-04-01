@@ -95,7 +95,6 @@ public class Sorting {
         for(int i = 0; i < nums.length; i++) { 
             str_num[i] = String.valueOf(nums[i]);
         }
-
         Arrays.sort(str_num, (a, b) -> (b + a).compareTo(a + b));
         if(str_num[0].charAt(0) == '0') 
             return "0";
@@ -105,5 +104,19 @@ public class Sorting {
             sb.append(s);
         }
         return sb.toString();
+    }
+
+    // ===============================================================================
+    public int maximumLengthOfPairChain(int[][] pairs) { 
+        Arrays.sort(pairs, (a, b) -> a[1] - b[1]); 
+        int min = Integer.MIN_VALUE; 
+        int res = 0; 
+        for(int[] pair: pairs) { 
+            if(min < pair[0]) { 
+                min = pair[1]; 
+                res++;
+            }
+        }
+        return res;
     }
 }
