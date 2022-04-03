@@ -1,5 +1,9 @@
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -47,6 +51,21 @@ public class SetMap {
         int pos = 0; 
         for(int n : set2)  
             res[pos++] = n; 
-    return res;
+        return res;
+    }
+
+    public List<List<String>> groupAnagram(String[] strs) { 
+        List<List<String>> groupedAnagram = new ArrayList<>();
+        HashMap<String, List<String>> map = new HashMap<>();
+        for(String str : strs) { 
+            char[] chars = str.toCharArray(); 
+            Arrays.sort(chars); 
+            String word = new String(chars); 
+            if(!map.containsKey(word)) 
+                map.put(word, new ArrayList<>()); 
+            map.get(word).add(str); 
+        }
+        groupedAnagram.addAll(map.values());
+        return groupedAnagram;
     }
 }
