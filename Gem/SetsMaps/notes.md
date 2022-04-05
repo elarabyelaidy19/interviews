@@ -44,3 +44,6 @@ set.size();
 ## [group anagrams](https://leetcode.com/problems/group-anagrams/)
 - sort each string, map each sorted string to bucket words of angaram.
  
+## [word patterns](https://leetcode.com/problems/word-pattern/) 
+- map each char to string, if char already mapped to string, check if it matches.
+

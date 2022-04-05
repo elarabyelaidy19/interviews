@@ -67,5 +67,25 @@ public class SetMap {
         }
         groupedAnagram.addAll(map.values());
         return groupedAnagram;
+    } 
+
+    public boolean wordpattern(String pattern, String words) { 
+        String[] strs = words.split(" "); 
+        if(strs.length != pattern.length()) return false; 
+        Map<Character, String> map = new HashMap<>(); 
+        
+        for(int i = 0; i < pattern.length(); i++) { 
+            char curr = pattern.charAt(i); 
+            if(map.containsKey(curr)) { 
+                if(!map.get(curr).equals(strs[i])) 
+                    return false;
+            } else { 
+                if(map.containsValue(strs[i])) { 
+                    return false;
+                }  
+                map.put(curr, strs[i]);
+            }
+        }
+        return true;
     }
 }
