@@ -59,4 +59,7 @@ public class Solution {
 - two sets, one for each array, if in both, add to result.
 
 ## [next permutation](https://leetcode.com/problems/next-permutation/) 
-- find first decreasing number, swap with next num bigger in right, reverse the rest. 
+- find first decreasing number, swap with next num bigger in right, reverse the rest.  
+
+## [3sum](https://leetcode.com/problems/3sum/)
+- 

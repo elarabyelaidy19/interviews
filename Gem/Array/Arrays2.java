@@ -26,4 +26,32 @@ public class Arrays2 {
     }
     
 
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+        for (int i = 0; i < nums.length - 2; i++) {
+            // skip when duplicates
+            if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
+                int lo = i + 1;
+                int hi = nums.length - 1;
+                int sum = 0 - nums[i]; // 0 - num == sum of 2 numbers when added together gives 0
+                while (hi > lo) {
+                    if (nums[lo] + nums[hi] == sum) {
+                        res.add(Arrays.asList(nums[i], nums[lo], nums[hi]));
+                        while (hi > lo && nums[lo] == nums[lo + 1])
+                            lo++; // skip duplicates
+                        while (hi > lo && nums[hi] == nums[hi - 1])
+                            hi--; // skip duplicates
+                        hi--;
+                        lo++;
+                    } else if (sum > nums[lo] + nums[hi])
+                        lo++;
+                    else
+                        hi--;
+                }
+            }
+        }
+        return res;
+    }
 }
