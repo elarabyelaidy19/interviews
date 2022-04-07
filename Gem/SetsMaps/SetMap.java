@@ -121,5 +121,30 @@ public class SetMap {
     }
 
 
+    // ========================================================================================== 
+    // check if number is happy number, happy number is 19 -> 1^2 + 9^2 -> 82 -> split number sum quare and repeat until it gives 1 
+    public boolean happyNumber(int n) { 
+        Set<Integer> set = new HashSet<>(); 
+        while(n != 1 && !set.contains(n)) { 
+            set.add(n); 
+            n = sumDigits(n);
+        }
+        return n == 1;
+    }
+
+    int sumDigits(int n) { 
+        int sum = 0; 
+        while(n != 0) { 
+            int s = n % 10; 
+            n /= 10; 
+            sum = s*s;
+        }
+        return sum;
+    }
+
+
+    // =================================================================================== 
     
+
+
 }

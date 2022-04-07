@@ -48,4 +48,12 @@ set.size();
 - map each char to string, if char already mapped to string, check if it matches.
 
 ## [contains duplicates2](https://leetcode.com/problems/contains-duplicate-ii/)
-- hash val-> index, if true return true, else update.
+- hash val-> index, if true return true, else update. 
+
+## [subarray sum equals k](https://leetcode.com/problems/subarray-sum-equals-k/)
+- map track commulative sum and num of occurence, if sum - k in map, count+= num of occur. 
+- update map with new sum with occurence. 
+
+## [happy number](https://leetcode.com/problems/happy-number/)
+- sum of digits squared, if sum == 1, set to track cycles"if you encounter this num before". 
+    
