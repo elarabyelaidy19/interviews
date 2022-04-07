@@ -47,3 +47,5 @@ set.size();
 ## [word patterns](https://leetcode.com/problems/word-pattern/) 
 - map each char to string, if char already mapped to string, check if it matches.
 
+## [contains duplicates2](https://leetcode.com/problems/contains-duplicate-ii/)
+- hash val-> index, if true return true, else update.
