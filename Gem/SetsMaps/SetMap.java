@@ -144,8 +144,19 @@ public class SetMap {
 
 
     // =================================================================================== 
-    
-    
+    // count number of times we have sum == 0 from four arrays
+    public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
+        int count = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int k : nums1)
+            for (int l : nums2)
+                map.put(k + l, map.getOrDefault(k + l, 0) + 1);
+
+        for (int m : nums3)
+            for (int n : nums4)
+                count += map.getOrDefault(-(m + n), 0);
+        return count;
+    }
 
 
 }
