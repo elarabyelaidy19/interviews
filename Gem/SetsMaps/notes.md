@@ -56,4 +56,8 @@ set.size();
 
 ## [happy number](https://leetcode.com/problems/happy-number/)
 - sum of digits squared, if sum == 1, set to track cycles"if you encounter this num before". 
-    
+
+## [four sum2](https://leetcode.com/problems/4sum-ii/) 
+- sum two arrays, map track num of occurences of each sum. 
+- find minus sum of others, if in map, add to result.
+- 0 = -(c+d) + (a+b) 
