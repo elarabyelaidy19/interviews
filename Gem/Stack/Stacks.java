@@ -49,8 +49,58 @@ public class Stacks {
                 if (stack.isEmpty() || stack.pop() != '{') 
                     return false;
             }   
-        }return stack.isEmpty();
-
         }
+        return stack.isEmpty();
+
+        
+    } 
+
+    // ===================================================================== 
+
+    public boolean backSpaceCompare(String s, String t) { 
+        return build(s).equals(build(t));
+    }
+
+    public String build(String s) { 
+        Stack<Character> stack = new Stack<>(); 
+        for(char c : s.toCharArray()) { 
+            if(c != '#') 
+                stack.push(c); 
+            else if (!stack.isEmpty()) 
+                stack.pop();
+        }
+        String.valueOf(stack);
+    } 
+
+
+
+    // ================================================================================== 
+    // evaluate reverse polish notations
+    public int evalRPN(String[] tokens) {
+        int a;
+        int b;
+        Stack<Integer> stack = new Stack<>();
+        for (String c : tokens) {
+            if (c.equals("+")) {
+                a = stack.pop();
+                b = stack.pop();
+                stack.add(a + b);
+            } else if (c.equals("-")) {
+                a = stack.pop();
+                b = stack.pop();
+                stack.add(b - a);
+            } else if (c.equals("/")) {
+                a = stack.pop();
+                b = stack.pop();
+                stack.add(b / a);
+            } else if (c.equals("*")) {
+                a = stack.pop();
+                b = stack.pop();
+                stack.add(a * b);
+            } else {
+                stack.add(Integer.parseInt(c));
+            }
+        }
+        return stack.pop();
     }
 }
