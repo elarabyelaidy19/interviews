@@ -1,7 +1,9 @@
 package Gem.Stacks;
 
+import java.util.Stack;
+
 public class Stacks { 
-    
+
     public int calPoints(String[] ops) {
         Stack<Integer> stack = new Stack<>();
 
@@ -24,5 +26,31 @@ public class Stacks {
             res += sc;
         return res;
 
+    } 
+
+    // ================================================================================== 
+    // valid parentheses must be complete ()[]{} -> true , [](){] -> false
+
+    public boolean isValid(String s) { 
+        Stack<Character> stack = new Stack<>();
+        if(s == null) return false; 
+        if(s.length() == 0) return true;
+        for(char c : s.toCharArray()) { 
+            if(c == '(' || c == '[' || c == '{') { 
+                stack.push(c);
+
+            } else if(c == ')') { 
+                if(stack.isEmpty() || stack.pop() != '(') 
+                    return false;
+            } else if (c == ']') {  
+                if (stack.isEmpty() || stack.pop() != '[') 
+                    return false; 
+            } else { 
+                if (stack.isEmpty() || stack.pop() != '{') 
+                    return false;
+            }   
+        }return stack.isEmpty();
+
+        }
     }
 }
