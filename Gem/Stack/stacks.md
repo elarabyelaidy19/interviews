@@ -10,4 +10,4 @@
 ## [evaluate reverse polish notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
 - stack to perform operations according to each operation. 
 ## [min stack](https://leetcode.com/problems/min-stack/)
-- 
+- linked list based stack, every node track the min value and next, val.
