@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Matrices {
+public class Grid1 {
     class NumMatrix {
 
         private int[][] sum;

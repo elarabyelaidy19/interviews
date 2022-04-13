@@ -32,7 +32,11 @@
 ## [valid sudoku](https://leetcode.com/problems/valid-sudoku/) 
 - 
 
-# [game of life](https://leetcode.com/problems/game-of-life/) 
+## [game of life](https://leetcode.com/problems/game-of-life/) 
 - count num of ones or dies in neighbors. 
 
+# Grid2
 
+
+## [spiral matrix II](https://leetcode.com/problems/spiral-matrix-ii/)
+- same as spiral matrix1.
