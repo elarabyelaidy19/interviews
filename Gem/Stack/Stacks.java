@@ -1,4 +1,4 @@
-package Gem.Stacks;
+package Gem.Stack;
 
 import java.util.Stack;
 
@@ -69,7 +69,7 @@ public class Stacks {
             else if (!stack.isEmpty()) 
                 stack.pop();
         }
-        String.valueOf(stack);
+        return String.valueOf(stack);
     } 
 
 
