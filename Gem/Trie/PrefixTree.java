@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class Trie { 
     private class TrieNode { 
         Map<Character, TrieNode> edges;     

@@ -1,3 +1,9 @@
+package Gem.Array;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Arrays2 {
     
     public void nextPermutations(int[] nums) { 

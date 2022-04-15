@@ -1,3 +1,5 @@
+package Gem.Array;
+
 public class Grid2 {
     
     public int[][] generateMatrix(int n) {

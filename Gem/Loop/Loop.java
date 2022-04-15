@@ -1,5 +1,5 @@
 
-
+package Gem.Loop;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,7 +108,7 @@ public class Loop {
     
     // 
     int peakIndexMountainArray2(int[] arr) { 
-        for(int i = 1; i+1 < arr.length - 1; i++) { 
+        for(int i = 1; i+1 < arr.length - 1;) { 
             if(arr[i] > arr[i+1]) 
                 return i; 
             return 0;
