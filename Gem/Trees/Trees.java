@@ -34,7 +34,7 @@ public class Trees {
         return root;
     }
 
-
+   // =====================================================================
     class Solution {
         private int sum = 0;
 
@@ -48,5 +48,19 @@ public class Trees {
             }
             return root;
         }
+    }
+
+    // ===================================================================== 
+    public TreeNode increasingBST(TreeNode root) {
+        return increasingBST(root, null);
+    }
+
+    public TreeNode increasingBST(TreeNode root, TreeNode next) {
+        if (root == null)
+            return next;
+        TreeNode res = increasingBST(root.left, root);
+        root.left = null;
+        root.right = increasingBST(root.right, next);
+        return res;
     }
 } 
