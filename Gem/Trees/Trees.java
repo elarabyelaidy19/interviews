@@ -1,4 +1,7 @@
 package Gem.Trees;
+
+import java.utils.LinkedList;
+
 public class Trees { 
 
     class TreeNode {
@@ -62,5 +65,23 @@ public class Trees {
         root.left = null;
         root.right = increasingBST(root.right, next);
         return res;
+    }
+
+
+    // ===================================================================== 
+
+    public int kthSmallest(TreeNode root, int k) {
+        LinkedList<TreeNode> stack = new LinkedList<>();
+
+        while (true) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (--k == 0)
+                return root.val;
+            root = root.right;
+        }
     }
 } 
