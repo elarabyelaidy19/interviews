@@ -6,3 +6,6 @@
 
 ## [kth smallest element in bst](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 - 
+
+## [recover binary search tree](https://leetcode.com/problems/recover-binary-search-tree/) 
+-
