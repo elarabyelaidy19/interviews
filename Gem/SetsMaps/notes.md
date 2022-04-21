@@ -60,4 +60,7 @@ set.size();
 ## [four sum2](https://leetcode.com/problems/4sum-ii/) 
 - sum two arrays, map track num of occurences of each sum. 
 - find minus sum of others, if in map, add to result.
-- 0 = -(c+d) + (a+b) 
+- 0 = -(c+d) + (a+b)  
+
+## [design hashset](https://leetcode.com/problems/design-hashset/)
+- boolean array.

@@ -1,4 +1,4 @@
-package Gem.SetsMaps;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -159,5 +159,26 @@ public class SetMap {
         return count;
     }
 
+    // =========================================================================== 
+
+    class MyHashSet {
+        boolean[] arr;
+
+        public MyHashSet() {
+            arr = new boolean[100000000];
+        }
+
+        public void add(int key) {
+            arr[key] = true;
+        }
+
+        public void remove(int key) {
+            arr[key] = false;
+        }
+
+        public boolean contains(int key) {
+            return arr[key];
+        }
+    }
 
 }
