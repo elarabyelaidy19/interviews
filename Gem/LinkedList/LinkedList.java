@@ -1,5 +1,7 @@
 package Gem.LinkedList;
 
+import javax.imageio.plugins.tiff.FaxTIFFTagSet;
+
 public class LinkedList {  
 
     class ListNode {
@@ -44,5 +46,20 @@ public class LinkedList {
 
         curr.next = l1 != null ? l1 : l2;
         return dummy.next;
+    } 
+
+
+    // ========================================================= 
+    // detct if linked list has cycle
+    public boolean hasCycle(ListNode head) { 
+        ListNode slow = head; 
+        ListNode fast = head; 
+        while(fast != null && fast.next != null) { 
+            fast = fast.next.next; 
+            slow = slow.next; 
+            if(fast == slow) 
+                return true;
+        }
+        return false;
     }
 }

@@ -5,4 +5,7 @@
 - dummy head store prev, and onew store next. 
 
 ## [merge two sorted linkedlists](https://leetcode.com/problems/merge-two-sorted-lists/) 
-- dummy head, while both are not null, compare val, if a < b, add a to result, else add b.
+- dummy head, while both are not null, compare val, if a < b, add a to result, else add b. 
+
+## [linkedlist cycle](https://leetcode.com/problems/linked-list-cycle/)
+- fast and slow pointer, if fast == slow, there is a cycle.
