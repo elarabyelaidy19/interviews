@@ -64,3 +64,9 @@ set.size();
 
 ## [design hashset](https://leetcode.com/problems/design-hashset/)
 - boolean array.
+
+## [design hashmap](https://leetcode.com/problems/design-hashmap/)
+- [explanation](https://leetcode.com/problems/design-hashmap/discuss/1097755/JS-Python-Java-C%2B%2B-or-(Updated)-Hash-and-Array-Solutions-w-Explanation) 
+- hash function for mapping 
+- linked list for chaining 
+- large size to minimize collisions.
