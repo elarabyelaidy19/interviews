@@ -19,7 +19,8 @@ public class SetMap {
         }
         return false;
     }
- 
+    // ================================================================ 
+
     public int[] twoSum(int[] nums, int target) { 
         if(nums == null || nums.length < 2) 
             return null; 
@@ -36,6 +37,7 @@ public class SetMap {
         return null;
     }
 
+    // ===========================================================
     public int[] intersectionOfTwoArrays(int[] nums1, int[] nums2) { 
         Set<Integer> set1 = new HashSet<>(); 
         for(int n : nums1) 

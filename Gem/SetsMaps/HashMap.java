@@ -21,7 +21,7 @@ public class HashMap {
     }
 
     private int hash(int key) { 
-        return (int)(key * mul % size);
+        return (int)((long)key * mul % size);
     }
 
     public void remove(int key) { 
@@ -47,7 +47,7 @@ public class HashMap {
     public int get(int key) { 
         int i = hash(key); 
         ListNode node = data[i]; 
-        for(; node.next != null; node = node.next) { 
+        for(; node != null; node = node.next) { 
             if(node.key == key)  
                 return node.val;
         }
