@@ -84,5 +84,31 @@ public class LinkedList {
             return slow;
         }
         return null;
+    } 
+
+
+    //===================================================================== 
+    // partition linkedlist every node less than x left, greater than goes right 
+    public ListNode partition(ListNode head, int x) { 
+        ListNode beforeHead = new ListNode(0); // save left list head
+        ListNode before = beforeHead; 
+        ListNode afterHead = new ListNode(0); // save right list head
+        ListNode after = afterHead;  
+
+        while(head != null) { 
+            if(head.val < x) { 
+                before.next = head; 
+                before = before.next; 
+            } else { 
+                after.next = head; 
+                after = after.next;
+            }
+            head = head.next;
+        }
+
+        after.next = null; 
+        before.next = afterHead.next; 
+        return beforeHead.next;
+
     }
 }

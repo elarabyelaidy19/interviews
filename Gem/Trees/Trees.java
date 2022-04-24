@@ -1,7 +1,5 @@
 package Gem.Trees;
 
-import java.utils.LinkedList;
-
 public class Trees { 
 
     class TreeNode {
