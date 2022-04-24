@@ -8,4 +8,10 @@
 - dummy head, while both are not null, compare val, if a < b, add a to result, else add b. 
 
 ## [linkedlist cycle](https://leetcode.com/problems/linked-list-cycle/)
-- fast and slow pointer, if fast == slow, there is a cycle.
+- fast and slow pointer, if fast == slow, there is a cycle. 
+
+## [design linkedlist](https://leetcode.com/problems/design-linkedlist/)
+
+
+## [linkedlist cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
+- fast and slow pointer, if fast == slow, then begin slow2 from head with slow start from meeting point,  if slow2 == slow, when slow == slow2 begining of cycle.
