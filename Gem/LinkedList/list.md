@@ -18,4 +18,9 @@
 
 ## [partion linkedlist](https://leetcode.com/problems/partition-list/)
 - two list after and bfore, save the head of before and after.  
-- 4 dummy node.
+- 4 dummy node. 
+
+## [even odd linkedlist](https://leetcode.com/problems/odd-even-linked-list/)
+- odd -> head, even -> head.next. 
+- next odd -> odd.next.next, next even -> even.next.next. 
+- save the head of even list.

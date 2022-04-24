@@ -111,4 +111,26 @@ public class LinkedList {
         return beforeHead.next;
 
     }
+
+
+    // ============================================================================= 
+    // group nodes with odd indicies togehther and even together
+    
+    public ListNode oddEvenList(ListNode head) { 
+        if(head == null) return null;
+        ListNode odd = head; 
+        ListNode even = head.next; 
+        ListNode evenHead = head.next; 
+
+        while(even != null && even.next != null) { 
+            even.next = even.next.next; 
+            odd.next = odd.next.next; 
+            
+            odd = odd.next; 
+            even = even.next;
+        }
+
+        odd.next = evenHead; 
+        return head;
+    }
 }
