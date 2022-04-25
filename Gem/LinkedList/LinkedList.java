@@ -18,7 +18,7 @@ public class LinkedList {
         node.next = node.next.next;
     } 
 
-
+    // =======================================================
     public ListNode reversLinkedList(ListNode head) { 
         if(head == null) return head; 
         ListNode prevNode = null; 
@@ -76,7 +76,7 @@ public class LinkedList {
             slow = slow.next; 
             if(slow == fast) { 
                 ListNode slow2 = head;
-                while(slow == slow2) { 
+                while(slow != slow2) { 
                     slow = slow.next; 
                     slow2 = slow2.next;
                 }
@@ -132,5 +132,55 @@ public class LinkedList {
 
         odd.next = evenHead; 
         return head;
+    } 
+
+    // ======================================================================================= 
+    // delete nth node from end 
+
+    public ListNode deleteNthNode(ListNode head, int n) { 
+        ListNode slow = head; 
+        ListNode fast = head; 
+        for(int i = 0; i < n; i++) fast = fast.next; // advance fast nth nodes 
+        if(fast == null) return head.next; // n == list.length  
+        while(fast.next != null) { 
+            fast = fast.next; 
+            slow = slow.next; 
+        }
+        slow.next = slow.next.next; // delete node; 
+        return head;
+    } 
+
+
+    // ================================================================================================ 
+    // intersection of two linkedlist
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        int lA = length(headA);
+        int lB = length(headB);
+
+        while (lA > lB) { // align them if A length is greater
+            headA = headA.next;
+            lA--;
+        } 
+
+        while (lA < lB) { // align them if B length is greater
+            headB = headB.next;
+            lB--;
+        }
+
+        while (headA != headB) { // when headA = headB return intersect
+            headA = headA.next;
+            headB = headB.next;
+        }
+
+        return headA;
+    }
+
+    private int length(ListNode head) {
+        int i = 0;
+        while (head != null) {
+            head = head.next;
+            i++;
+        }
+        return i;
     }
 }

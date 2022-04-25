@@ -54,7 +54,8 @@ public class Arrays1 {
         }
     }
 
-
+    // ============================================================= 
+    // return res arr is a array each element is product of all elements of nums except number at this index
     public int[] productOfArrayExceptSelf(int[] nums) { 
         int n = nums.length; 
         int[] res = new int[n]; 
@@ -75,6 +76,7 @@ public class Arrays1 {
         return res;
     }
 
+    // ==================================================================
     public int missingNumber(int[] nums) { 
         int n = nums.length+1; 
         int sum = (n * (n-1))/2; 
@@ -82,6 +84,8 @@ public class Arrays1 {
             sum -= num; 
         return sum;
     } 
+
+    // =================================================================
 
     public double findMaxAverage(int[] nums, int k) { 
         int sum = 0; 
@@ -96,6 +100,8 @@ public class Arrays1 {
 
         return res/k;
     }
+
+    // ========================================================= 
 
     public int maxConsecutiveOnes(int[] nums) { 
         int max = 0; 
@@ -113,7 +119,7 @@ public class Arrays1 {
 
 
     // ======================================================
-
+    // count how many number with even number of digits in array
     public int findNumbers(int[] nums) {
         int even = 0;
         for (int i = 0; i < nums.length; i++) {
