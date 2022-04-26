@@ -31,3 +31,10 @@
 - two pointer slow and fast, fast ahead of n from slow. 
 - when fast.next == null, slow is nth from end. 
 - edge case where n is the length of list e.g fast == null return delete head return head.next. 
+
+
+## [intersect of two linkedlist](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+- calc length of each list, align the longer list to the shorter list. 
+- return node when headA == headB.
+
+last three problems in interview.school still.

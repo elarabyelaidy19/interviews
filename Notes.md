@@ -57,3 +57,33 @@ only one child.
     * null root is balanced and height -1
 - skewed tree 
     * is a type of binary tree in which all the nodes have only one child or no child. 
+
+
+# Priority Queue/Heap 
+- built with heap
+- insert, remove -> O(log n) 
+- min/max -> O(1)  
+- PQ in java maintaimns minimum value by default.  
+- come in handy when you need to find the minimum or maximum value in a set of values. 
+
+
+```java 
+PriorityQueue<Integer> pq = new PriorityQueue<>(); 
+pq.add(2);
+pq.add(3); 
+pq.add(8);
+
+pq.peek(); // print 2
+pq.poll(); // remove minimum val 2 
+
+// reverse PQ into max heap
+PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); 
+PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>((a, b) -> b - a);     
+
+pq.add(2);
+pq.add(3);
+pq.add(8);
+
+pq.peek(); // print 8 max val 
+pq.poll(); // remove max val 8
+```
