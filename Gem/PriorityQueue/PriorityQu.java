@@ -28,7 +28,7 @@ public class PriorityQu {
     }
 
     // ================================================================= 
-
+    // find median from data stream.
     class MedianFinder { 
         private PriorityQueue<Integer> small = new PriorityQueue<>((a, b) -> b - a);
         private PriorityQueue<Integer> large = new PriorityQueue<>();
@@ -42,6 +42,38 @@ public class PriorityQu {
 
         public double findMedian() {
             return large.size() > small.size() ? large.peek() : (small.peek() + large.peek()) / 2.0;
+        }
+    } 
+
+    class MedianFinder2 {
+
+        private PriorityQueue<Integer> firstHalf;
+        private PriorityQueue<Integer> secondHalf;
+
+        public MedianFinder2() {
+            firstHalf = new PriorityQueue<Integer>((a, b) -> b - a);
+            secondHalf = new PriorityQueue<Integer>();
+        }
+
+        public void addNum(int num) {
+            if (firstHalf.size() == 0 || num <= firstHalf.peek()) {
+                firstHalf.add(num);
+                if (firstHalf.size() > secondHalf.size() + 1)
+                    secondHalf.add(firstHalf.poll());
+            } else {
+                secondHalf.add(num);
+                if (secondHalf.size() > firstHalf.size())
+                    firstHalf.add(secondHalf.poll());
+            }
+        }
+
+        public double findMedian() {
+            if (firstHalf.size() > secondHalf.size()) {
+                return 1.0 * firstHalf.peek();
+            } else {
+                double sum = firstHalf.peek() + secondHalf.peek();
+                return sum / 2;
+            }
         }
     }
 }
