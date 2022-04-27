@@ -1,6 +1,9 @@
 package Gem.PriorityQueue;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class PriorityQu {
     // find kth largest ele in array
@@ -44,7 +47,7 @@ public class PriorityQu {
             return large.size() > small.size() ? large.peek() : (small.peek() + large.peek()) / 2.0;
         }
     } 
-
+    // 2
     class MedianFinder2 {
 
         private PriorityQueue<Integer> firstHalf;
@@ -75,5 +78,48 @@ public class PriorityQu {
                 return sum / 2;
             }
         }
+    }
+
+    // ================================================================ 
+    // find kth largest element in sorted matrix 
+    // O(N*M Logk) 
+    public int kthSmallest(int[][] matrix, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a, b) -> b - a);
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                int curr = matrix[i][j];
+                pq.offer(curr);
+                if (pq.size() > k)
+                    pq.poll();
+            }
+        }
+        return pq.peek();
+    }
+
+
+    // ========================================================================== 
+    // find top freq elemnts in array 
+    public int[] topKFreqElements(int[] nums, int k) { 
+        Map<Integer, Integer> count = new HashMap<>();
+        // map each val to it's freq
+        for (int n : nums) {
+            count.put(n, count.getOrDefault(n, 0) + 1);
+        }
+        // heap maintains the less frequnt first
+        Queue<Integer> pq = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));
+
+        // keep the top frequnt elements only in the heap
+        for (int n : count.keySet()) {
+            pq.add(n);
+            if (pq.size() > k)
+                pq.poll();
+        }
+
+        // output array of pq elemnt
+        int[] topK = new int[k];
+        for (int i = 0; i < k; i++)
+            topK[i] = pq.poll();
+
+        return topK;
     }
 }
