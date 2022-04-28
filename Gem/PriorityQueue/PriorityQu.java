@@ -33,7 +33,7 @@ public class PriorityQu {
     // ================================================================= 
     // find median from data stream.
     class MedianFinder { 
-        private PriorityQueue<Integer> small = new PriorityQueue<>((a, b) -> b - a);
+        private PriorityQueue<Integer> small = new PriorityQueue<>((a, b) -> b - a); // max heap
         private PriorityQueue<Integer> large = new PriorityQueue<>();
 
         public void addNum(int num) {
@@ -122,4 +122,32 @@ public class PriorityQu {
 
         return topK;
     }
+
+    // =========================================================================================== 
+    // top k frequent words sorted lexic
+    public List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> map = new HashMap<>();
+
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+
+        Queue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
+                (a, b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey())
+                        : a.getValue() - b.getValue());
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            pq.add(entry);
+            if (pq.size() > k)
+                pq.poll();
+        }
+
+        List<String> res = new ArrayList<>();
+        while (!pq.isEmpty()) {
+            res.add(0, pq.poll().getKey());
+        }
+        return res;
+
+    }
+
 }

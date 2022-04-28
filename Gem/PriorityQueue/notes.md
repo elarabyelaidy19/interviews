@@ -19,3 +19,6 @@
 - map each element to its frequency, min heap of most frequent heapifyied by val. 
 - keep most frequent k elements only in the heap. 
 - output array of heap elements.
+
+## [top k frequent words] (https://leetcode.com/problems/top-k-frequent-words/)
+- **O(NLogK)**
