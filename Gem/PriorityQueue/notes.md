@@ -23,4 +23,9 @@
 ## [top k frequent words] (https://leetcode.com/problems/top-k-frequent-words/)
 - **O(NLogK)** 
 - map each word to its frequency, min heap of most frequent words sorted lex. 
-- 
+-  
+
+## [merge k sorted lists] (https://leetcode.com/problems/merge-k-sorted-lists/)
+- **O(NLogK)**
+- loop over k lists, add each element to a min heap. 
+- pop the min element from the heap, add it to the output linkedlist.
