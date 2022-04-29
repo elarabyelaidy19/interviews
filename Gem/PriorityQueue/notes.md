@@ -21,4 +21,6 @@
 - output array of heap elements.
 
 ## [top k frequent words] (https://leetcode.com/problems/top-k-frequent-words/)
-- **O(NLogK)**
+- **O(NLogK)** 
+- map each word to its frequency, min heap of most frequent words sorted lex. 
+- 
