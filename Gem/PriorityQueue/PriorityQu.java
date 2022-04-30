@@ -54,7 +54,7 @@ public class PriorityQu {
         private PriorityQueue<Integer> secondHalf;
 
         public MedianFinder2() {
-            firstHalf = new PriorityQueue<Integer>((a, b) -> b - a);
+            firstHalf = new PriorityQueue<Integer>((a, b) -> b - a); // max heap
             secondHalf = new PriorityQueue<Integer>();
         }
 
@@ -106,7 +106,7 @@ public class PriorityQu {
             count.put(n, count.getOrDefault(n, 0) + 1);
         }
         // heap maintains the less frequnt first
-        Queue<Integer> pq = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));
 
         // keep the top frequnt elements only in the heap
         for (int n : count.keySet()) {
@@ -132,7 +132,7 @@ public class PriorityQu {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        Queue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
+        PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
                 (a, b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey())
                         : a.getValue() - b.getValue());
 
@@ -142,7 +142,7 @@ public class PriorityQu {
                 pq.poll();
         }
 
-        List<String> res = new ArrayList<>();
+        ArrayList<String> res = new ArrayList<>();
         while (!pq.isEmpty()) {
             res.add(0, pq.poll().getKey());
         }
@@ -171,5 +171,27 @@ public class PriorityQu {
         return dummy.next;
     }
 
-    // ===========================================================
+    // =========================================================== 
+
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums.length == 0 || k == 0) {
+            return new int[0];
+        }
+        int n = nums.length;
+        int[] result = new int[n - k + 1]; // number of windows
+
+        PriorityQueue<Integer> maxPQ = new PriorityQueue<>((i1, i2) -> (nums[i2] - nums[i1])); // stores values
+
+        for (int i = 0; i < n; ++i) {
+            int start = i - k;
+            if (start >= 0) {
+                maxPQ.remove(start); // remove the out-of-bound value by index
+            }
+            maxPQ.offer(i);
+            if (maxPQ.size() == k) {
+                result[i - k + 1] = nums[maxPQ.peek()];
+            }
+        }
+        return result;
+    }
 }

@@ -1,3 +1,11 @@
+# String 
+- Strings in java are immutables, each time you append to the string new String object is created. 
+- StringBuilder is mutable. 
+
+
+
+
+
 # Bit Masks 
 
 ### Basic Operations 
