@@ -2,6 +2,13 @@
 - Strings in java are immutables, each time you append to the string new String object is created. 
 - StringBuilder is mutable. 
 
+## regular functions
+- String.split() -> return array of strings.
+- charAt() -> return char at index. 
+- stringBuilder.append() -> append to string.
+- stringBuilder.toString() -> return string.
+- toLowerCase() -> return lowercase string.
+- toUpperCase() -> return uppercase string.
 
 
 
