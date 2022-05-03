@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Strings {
     
     // reverse words in string -> reverse phrase
@@ -66,5 +68,46 @@ public class Strings {
         } 
         
         return (int)result;
+    }
+
+    // ========================================================================================
+    // reverse each word in sentence
+    public String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+        String[] st = s.split(" ");
+        int n = st.length;
+        for (int i = 0; i < n; i++) {
+            sb.append(reverse(st[i]));
+            sb.append(" ");
+        }
+        return sb.toString().trim();
+    }
+
+    public String[] split(String s) {
+        ArrayList<String> res = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                res.add(sb.toString());
+                sb = new StringBuilder();
+            } else {
+                sb.append(s.charAt(i));
+            }
+        }
+        res.add(sb.toString());
+        return res.toArray(new String[res.size()]);
+
+    }
+
+    public String reverse(String word) {
+        int r = word.length() - 1;
+        StringBuilder sb = new StringBuilder();
+        while (r >= 0) {
+            sb.append(word.charAt(r));
+            r--;
+        }
+        return sb.toString();
+
     }
 }
