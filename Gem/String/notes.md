@@ -1,3 +1,4 @@
+
 ## [reverse word in string](https://leetcode.com/problems/reverse-words-in-a-string/) 
 - split, move backward, stringbuilder. 
 
@@ -9,3 +10,9 @@
 
 ## [reverse words in a string iii](https://leetcode.com/problems/reverse-words-in-a-string-iii/)
 - split, reverse, join.
+
+## [compare version numbers](https://leetcode.com/problems/compare-version-numbers/)
+- split escape dot, compare each.
+
+
+(integer to english still in interview.school)
