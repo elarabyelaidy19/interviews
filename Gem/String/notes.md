@@ -12,7 +12,7 @@
 - split, reverse, join.
 
 ## [compare version numbers](https://leetcode.com/problems/compare-version-numbers/)
-- split escape dot, compare each.
+- split escape dot, compare each parsed.
 
 
 (integer to english still in interview.school)
