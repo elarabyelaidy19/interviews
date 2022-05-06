@@ -5,7 +5,7 @@
 ## [license key formatting](https://leetcode.com/problems/license-key-formatting/) 
 - move backwoard, stringbuilder append chars, when sb length mod k append '-' reverse.
 
-## [string to integer atoi] (https://leetcode.com/problems/string-to-integer-atoi/) 
+## [string to integer atoi](https://leetcode.com/problems/string-to-integer-atoi/) 
 - handling overflow, handle sign, handle nondigits, handle leading spaces, handle leading +, handle leading 0.
 
 ## [reverse words in a string iii](https://leetcode.com/problems/reverse-words-in-a-string-iii/)
@@ -15,4 +15,5 @@
 - split escape dot, compare each parsed.
 
 ## [longest absolute file path](https://leetcode.com/problems/longest-absolute-file-path/)
+
 (integer to english still in interview.school)
