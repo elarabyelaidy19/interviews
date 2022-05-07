@@ -1,6 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.Stack;
 
 public class Strings {
     
@@ -135,17 +136,19 @@ public class Strings {
 
     // ================================================================== 
      public int lengthLongestPath(String input) {
-        Deque<Integer> stack = new ArrayDeque<>();
-        String[] arr = input.split("\n");
-        int maxLen = 0;
+        Stack<Integer> stack = new Stack<>(); 
+        String[] arr = input.split("\n"); 
         stack.push(0);
-        for (String s: arr) {
-            int numOfTabs = s.lastIndexOf("\t") + 1;
-            int level = numOfTabs + 1;
-            while (level < stack.size()) stack.poll(); 
-            int curLen = stack.peek() + s.length() - numOfTabs + 1;
-            stack.push(curLen);
-            if (s.contains(".")) maxLen = Math.max(maxLen, curLen - 1);
+        int maxLen = 0; 
+
+        for(String s :arr) { 
+            int numOfTabs = s.lastIndexOf("\t") + 1; // + 1 it will return / not /t, and make level 1 if return -1
+            int level = numOfTabs + 1; 
+
+            while(stack.size() > level) stack.pop();            
+            int curLen = stack.peek() + s.length() - numOfTabs + 1; // + indicates / inth absolute path 
+            stack.push(curLen); 
+            if(s.contains(".")) maxLen = Math.max(maxLen, curLen-1);
         }
         return maxLen;
     }
