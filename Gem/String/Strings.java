@@ -1,6 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class Strings {
@@ -134,7 +135,8 @@ public class Strings {
         return 0;
     } 
 
-    // ================================================================== 
+    // ==================================================================  
+    // return the length of absolute path of file
      public int lengthLongestPath(String input) {
         Stack<Integer> stack = new Stack<>(); 
         String[] arr = input.split("\n"); 
@@ -151,5 +153,18 @@ public class Strings {
             if(s.contains(".")) maxLen = Math.max(maxLen, curLen-1);
         }
         return maxLen;
+    } 
+
+    // ============================================================================= 
+    // simplify file given some filesystem movement return the result after doing this commands
+    public String simplifyPaths(String s) { 
+        Deque<String> stack = new LinkedList<>(); 
+        StringBuilder sb = new StringBuilder(); 
+        for(String dir : s.split("/")) { 
+            if(dir.equals("..") && !stack.isEmpty()) stack.poll(); 
+            else if(!dir.equals("") && !dir.equals(".")) stack.push(dir);
+        }
+        while(stack.size() != 0) sb.append("/").append(stack.pollLast()); 
+        return stack.isEmpty() ? "/" : sb.toString();
     }
 }

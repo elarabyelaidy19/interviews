@@ -22,5 +22,8 @@
     - a) if a sub-dir, than append its length to just higher level sub-dir
     - b) if its a file, compute the length of string for this file. To compute, get the level at this file is and add the length of the file
 
-
+## [simplify path](https://leetcode.com/problems/simplify-path/) 
+- split by '/', ignore empty and '.', poll() when "..", push() when not ".." 
+- use deque to store the path string builder + "/" pollLast() while not empty.
+ 
 (integer to english still in interview.school)
