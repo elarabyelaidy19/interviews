@@ -26,4 +26,6 @@
 - split by '/', ignore "" and '.', poll() when "..", push() when not ".." 
 - use deque to store the path string builder + "/" pollLast() while not empty.
 
-(integer to english still in interview.school)
+## [goat latin](https://leetcode.com/problems/goat-latin/) 
+- store vowels, split on space, if begins with vowel append word + "ma"+ index * a, else substring(1) + at(0) + "ma" + "a" * i. 
+- count store spaces.

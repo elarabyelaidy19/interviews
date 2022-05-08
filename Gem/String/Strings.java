@@ -1,7 +1,10 @@
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Set;
 import java.util.Stack;
 
 public class Strings {
@@ -166,5 +169,30 @@ public class Strings {
         }
         while(stack.size() != 0) sb.append("/").append(stack.pollLast()); 
         return stack.isEmpty() ? "/" : sb.toString();
+    }
+
+    // ================================================================= 
+    // params sentence, check if word start with vowel append "ma" + i * "a", else append first chars at end + "ma" + i * "a". i => index of word
+
+    public String goatLatin(String s) { 
+        Set<Character> set = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')); 
+        String[] words = s.split(" "); 
+        int count = 0; 
+        StringBuilder sb = new StringBuilder(); 
+
+        for(String word : words) {
+            count++; 
+            if(count > 1) sb.append(" "); // start append spaces after first word 
+            if(set.contains(word.charAt(0))) { 
+                sb.append(word);
+            } else { 
+                sb.append(word.substring(1) + word.charAt(0)); // substring from index 1 to end
+            }
+            sb.append("ma"); 
+            for(int j = 0; j < count; j++) { 
+                sb.append("a");
+            }
+        }
+        return sb.toString();
     }
 }
