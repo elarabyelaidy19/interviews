@@ -1,6 +1,5 @@
 public class TwoPointers { 
 
-
     public boolean validPlindrome2(String s) { 
         int l = 0; 
         int r = s.length()-1; 
@@ -24,6 +23,7 @@ public class TwoPointers {
         return true;
     } 
 
+    // valid mountain if the there is number it's left increasing and right decreasing
     public boolean validMountain(int[] arr) { 
         if(arr.length < 3) return false;
         int l = 0; 
@@ -32,4 +32,17 @@ public class TwoPointers {
         while(r-1 > 0 && arr[r] < arr[r-1]) r--; 
         return l == r;
     }
-}
+
+    // remove duplicate from  array inplace
+    public int removeDuplicateFromSortedArray(int[] arr) { 
+        int l = 0; 
+        int r = 0; 
+        while(r < nums.length) { 
+            if(nums[l] != nums[j]) { 
+                l++; 
+                nums[l] = nums[r];
+            }
+        }
+        return l+1; 
+    }
+}   
