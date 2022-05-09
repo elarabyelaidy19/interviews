@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class TwoPointers { 
 
     public boolean validPlindrome2(String s) { 
@@ -63,4 +67,56 @@ public class TwoPointers {
 
     }
 
+
+    // =========================================================================== 
+    // squaring a sorted array
+
+    public int[] sortedSquares(int[] nums) {
+        int[] res = new int[nums.length];
+        int l = 0;
+        int r = nums.length - 1;
+        int n = res.length - 1;
+        while (r >= l) {
+            if (Math.abs(nums[l] * nums[l]) > Math.abs(nums[r] * nums[r])) {
+                res[n--] = nums[l] * nums[l];
+                l++;
+            } else {
+                res[n--] = nums[r] * nums[r];
+                r--;
+            }
+        }
+        return res;
+    } 
+
+
+    // =============================================================== 
+    //find all triplets that there sum is equals to zero 
+    public List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums); // sort 
+        List<List<Integer>> res = new ArrayList<>(); 
+        for(int i = 0; i < nums.length-2; i++) { 
+            if(i == 0 || nums[i] != nums[i-1]) { 
+                int sum = -nums[i]; // x + y + z = 0 =>  x + y = -z
+                int lo = i+1; 
+                int hi = nums.length-1; 
+                while(hi > lo) { 
+                    if(nums[lo] + nums[hi] == sum) { 
+                        res.add(Arrays.asList(nums[i], nums[lo], nums[hi])); 
+                        while(hi > lo && nums[lo] == nums[lo+1]) lo++; // skip duplciates
+                        while(hi > lo && nums[hi] == nums[hi-1]) hi--; // skip duplicates
+                        lo++; 
+                        hi--;
+                    } else if(nums[lo] + nums[hi] > sum) { 
+                        while(hi > lo && nums[hi] == nums[i-1]) hi--; // skip duplicates
+                        hi--;
+                    } else { 
+                        while (hi > lo && nums[lo] == nums[lo + 1]) lo++; // skip duplicates
+                        lo++;
+                    }   
+                }
+
+            }
+        }
+        return res;
+    }
 }   

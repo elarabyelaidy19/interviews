@@ -11,3 +11,13 @@
 
 ## [remove duplicates from sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) 
 - two pointers, one pointer for iterating the array and another for placing the next non-duplicate.
+
+## [remove element](https://leetcode.com/problems/remove-element/)
+- two pointers, one pointer for iterating the array and another for placing the next not ocurrence of k.
+
+## [squares of sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/) 
+- two ponters, plcae the max at the end of the res. if square of negative number bigger than max?. 
+
+## [three sum](https://leetcode.com/problems/3sum/)
+- sort array, taking one number at a time and check if it is the negative sum of two numbers. 
+- x + y + z = 0 => x + y = -z
