@@ -34,15 +34,33 @@ public class TwoPointers {
     }
 
     // remove duplicate from  array inplace
-    public int removeDuplicateFromSortedArray(int[] arr) { 
+    public int removeDuplicateFromSortedArray(int[] nums) { 
         int l = 0; 
         int r = 0; 
         while(r < nums.length) { 
-            if(nums[l] != nums[j]) { 
+            if(nums[l] != nums[r]) { 
                 l++; 
                 nums[l] = nums[r];
             }
         }
         return l+1; 
     }
+
+    // Given an unsorted array of numbers and a target ‘key’, remove all instances of ‘key’ in-place 
+    // and return the new length of the array.
+
+    public int removeElement(int[] arr, int k) { 
+        int l = 0; 
+        int r = 0; 
+        while(r < arr.length) { 
+            if(arr[r] != k) { 
+                arr[l] = arr[r]; 
+                l++;
+            }
+            r++;
+        }
+        return l;
+
+    }
+
 }   

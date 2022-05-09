@@ -9,12 +9,19 @@
 - stringBuilder.toString() -> return string.
 - toLowerCase() -> return lowercase string.
 - toUpperCase() -> return uppercase string.
-
+- substring(1) -> return substring from 1 to end.
 
 
 # Stack  
+- 
+
 
 # Deque
+- Deque is a double-ended queue. 
+- Deque is a linear collection that supports insertion and removal at both ends in constant time.
+- getFirst() -> return first element.
+- getLast() -> return last element.
+- poll() -> return and remove first element.
 
 # Bit Masks 
 
