@@ -23,4 +23,9 @@
 - x + y + z = 0 => x + y = -z 
 
 ## [three sum closest](https://leetcode.com/problems/3sum-closest/)
-- sort array, two pointers, find minimum difference between sum and diffrence.
+- sort array, two pointers, find minimum difference between sum and diffrence. 
+
+## [three sum smaller](https://leetcode.com/problems/3sum-smaller/)
+- sort array, two pointers, find how many numbers are smaller than the target. 
+-  A[i] + A[j] + A[k] < target, which means the numbers between j and k are all less than target, because the array is sorted. Then we move the j pointer forward. 
+- If A[i] + A[j] + A[k] >= target, we move k pointer backward.

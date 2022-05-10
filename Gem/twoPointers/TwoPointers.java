@@ -120,6 +120,7 @@ public class TwoPointers {
         return res;
     }
 
+    // ======================================================================================
     // three sum closest 
     // find the closest sum of targer
     public int threeSumClosest(int[] nums, int target) {
@@ -143,5 +144,32 @@ public class TwoPointers {
             }
         }
         return res;              
-    } 
+    }  
+
+    // =======================================================================================  
+    // find number of triplets with sum less than target
+    public int tripletsWithSmaller(int[] nums, int target) { 
+        if(nums == null || nums.length < 3) { 
+            return 0;
+        }
+
+        Arrays.sort(nums); 
+        int count = 0; 
+        for(int i = 0; i < nums.length-2; i++) { 
+            if(i == 0 || nums[i] != nums[i-1]) { 
+                int sum = target - nums[i]; // num[i] + nums[lo] + nums[hi] < target == nums[lo] + nums[hi] < target - nums[i]  
+                int lo = i+1; 
+                int hi = nums.length-1; 
+                while(hi >= lo) { 
+                    if(nums[lo] + nums[hi] < sum) { 
+                        count += (hi-lo); // if sum less than, this mean all number between hi..lo is less than, array is sorted.  
+                        lo++;
+                    } else { 
+                        hi--;
+                    }
+                } 
+            }
+        }
+        return count;
+    }
 }   
