@@ -20,4 +20,7 @@
 
 ## [three sum](https://leetcode.com/problems/3sum/)
 - sort array, taking one number at a time and check if it is the negative sum of two numbers. 
-- x + y + z = 0 => x + y = -z
+- x + y + z = 0 => x + y = -z 
+
+## [three sum closest](https://leetcode.com/problems/3sum-closest/)
+- sort array, two pointers, find minimum difference between sum and diffrence.

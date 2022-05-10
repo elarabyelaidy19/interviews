@@ -10,7 +10,10 @@ public class LinkedList {
       int val;
       ListNode next;
       public ListNode(int x) { val = x; }
-    }
+    } 
+
+    // ===================================== 
+    // delete node
     public void deleteNode(ListNode node) {
         if (node == null || node.next == null)
             return;
@@ -18,7 +21,8 @@ public class LinkedList {
         node.next = node.next.next;
     } 
 
-    // =======================================================
+    // ======================================================= 
+    // reverse linkedlist 
     public ListNode reversLinkedList(ListNode head) { 
         if(head == null) return head; 
         ListNode prevNode = null; 
@@ -46,7 +50,7 @@ public class LinkedList {
             curr = curr.next;
         }
 
-        curr.next = l1 != null ? l1 : l2;
+        curr.next = l1 != null ? l1 : l2; // if one finshed before other append it 
         return dummy.next;
     } 
 

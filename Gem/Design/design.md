@@ -5,7 +5,7 @@
 - wrapper to store passenger info 
 - map each passenger to his info <id , info> 
 - concat start+end as key 
-- map each key to array store total time(end-start) and count
+- map each key to array store total time(end-start) and count number of passengers
 - getAverageTime(id) = total time / count 
 
 ## [peeking iterator](https://leetcode.com/problems/peeking-iterator/)
