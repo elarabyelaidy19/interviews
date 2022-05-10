@@ -12,11 +12,11 @@
 - split, reverse, join.
 
 ## [compare version numbers](https://leetcode.com/problems/compare-version-numbers/)
-- split escape dot, compare each parsed.
+- split escape dot, compare each parsed num.
 
 ## [longest absolute file path](https://leetcode.com/problems/longest-absolute-file-path/) 
 - Split the string by '\n'
-- Find the last index of '\t' { last because a sub-string may contain multiple '\t' but as above question they effectively a single sub-dir or file}
+- Find the last index of '\t' { last because a sub-string may contain multiple '\t'}
 - Compute the remaining length of string without '\t'
 - Check does this is a file or not
     - a) if a sub-dir, than append its length to just higher level sub-dir

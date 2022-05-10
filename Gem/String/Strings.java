@@ -42,6 +42,7 @@ public class Strings {
     }
 
     // ================================================================================================ 
+    // string to integer function
     public int myAtoi(String str) { 
         if(str.length() == 0 || str == null) 
             return 0; 
@@ -81,13 +82,13 @@ public class Strings {
     // reverse each word in sentence
     public String reverseWords(String s) {
         StringBuilder sb = new StringBuilder();
-        String[] st = s.split(" ");
+        String[] st = split(s);
         int n = st.length;
         for (int i = 0; i < n; i++) {
             sb.append(reverse(st[i]));
             sb.append(" ");
         }
-        return sb.toString().trim();
+        return sb.toString().trim(); // trim eleminates leading and trailing spaces
     }
 
     public String[] split(String s) {
@@ -147,10 +148,10 @@ public class Strings {
         int maxLen = 0; 
 
         for(String s :arr) { 
-            int numOfTabs = s.lastIndexOf("\t") + 1; // + 1 it will return / not /t, and make level 1 if return -1
+            int numOfTabs = s.lastIndexOf("\t") + 1; // +1 lastindexOf it will return / not /t, and make level 0 if return -1
             int level = numOfTabs + 1; 
 
-            while(stack.size() > level) stack.pop();            
+            while(stack.size() > level) stack.pop();             
             int curLen = stack.peek() + s.length() - numOfTabs + 1; // + indicates / inth absolute path 
             stack.push(curLen); 
             if(s.contains(".")) maxLen = Math.max(maxLen, curLen-1);
@@ -186,7 +187,7 @@ public class Strings {
             if(set.contains(word.charAt(0))) { 
                 sb.append(word);
             } else { 
-                sb.append(word.substring(1) + word.charAt(0)); // substring from index 1 to end
+                sb.append(word.substring(1) + word.charAt(0)); // substring from index 1 to end then append first char
             }
             sb.append("ma"); 
             for(int j = 0; j < count; j++) { 

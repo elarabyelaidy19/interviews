@@ -162,7 +162,7 @@ public class TwoPointers {
                 int hi = nums.length-1; 
                 while(hi >= lo) { 
                     if(nums[lo] + nums[hi] < sum) { 
-                        count += (hi-lo); // if sum less than, this mean all number between hi..lo is less than, array is sorted.  
+                        count += (hi-lo); // if sum less than, this means all number between hi..lo is less than target, array is sorted.  
                         lo++;
                     } else { 
                         hi--;
