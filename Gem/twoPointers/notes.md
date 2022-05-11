@@ -1,8 +1,6 @@
-
-
 ## [valid plindrome2](https://leetcode.com/problems/valid-palindrome-ii/) 
 - check if a string is a palindrome
-- when there is not match, we remove left or right character and check if it is a palindrome.
+- when there is not match, move left or right one character and check if it is a palindrome.
 
 ## [valid mountain array](https://leetcode.com/problems/valid-mountain-array/) 
 - two pointers, left and right, left is increasing and right is decreasing. 
@@ -23,7 +21,7 @@
 - x + y + z = 0 => x + y = -z 
 
 ## [three sum closest](https://leetcode.com/problems/3sum-closest/)
-- sort array, two pointers, find minimum difference between sum and diffrence. 
+- sort array, two pointers, find minimum difference. 
 
 ## [three sum smaller](https://leetcode.com/problems/3sum-smaller/) 
 - **O(n^2)** time and **O(n)** space.
@@ -31,3 +29,11 @@
 -  A[i] + A[j] + A[k] < target, which means the numbers between j and k are all less than target, because the array is sorted. Then we move the j pointer forward. 
 - If A[i] + A[j] + A[k] >= target, we move k pointer backward. 
 
+## [subarray product less than k](leetcode.com/problems/subarray-product-less-than-k/) 
+- two pointers, one for aqcuiring the product, one for resucin if the product is greater than k. 
+- when the product is greater than k, resduce product by divid on left.
+- when the product is less than k, increase count by (r-l+1). 
+- every step introduce x new subarray (5, 2) => (5, (2, (6))) here we introduced three subarrays (6), (2,6), (5,2,6) 
+
+## [sort colors](https://leetcode.com/problems/sort-colors/)
+- two end pointers, 0s goes to left, twos goes to right. after ones will be in middle.
