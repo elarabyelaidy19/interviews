@@ -147,7 +147,6 @@ public class TwoPointers {
             int hi = nums.length-1; 
             while(hi > lo) { 
                 int sum = nums[i] + nums[lo] + nums[hi]; 
-                
                 if (sum > target) { 
                     hi--;
                 } else { 
