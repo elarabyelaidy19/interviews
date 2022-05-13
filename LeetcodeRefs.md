@@ -1,4 +1,4 @@
-## [practicing effecienly](https://leetcode.com/discuss/study-guide/2009997/how-to-get-started-with-dsa-and-practice-leetcode-efficiently )  
+## [practicing efficiently](https://leetcode.com/discuss/study-guide/2009997/how-to-get-started-with-dsa-and-practice-leetcode-efficiently )  
 > useful resource for getting better at dsa/leetcode. 
 
 
