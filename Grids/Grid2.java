@@ -1,4 +1,4 @@
-package Gem.Array;
+package Grids;
 
 public class Grid2 {
     

@@ -1,4 +1,4 @@
-package Gem.Array;
+package Grids;
 
 import java.util.ArrayList;
 import java.util.HashMap;

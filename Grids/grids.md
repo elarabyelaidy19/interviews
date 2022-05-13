@@ -18,7 +18,7 @@
 - index within range, divides into 4 parts, finish update index. 
 - top -> right -> bottom -> left 
 
-![spiral](https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg) 
+## [spiral](https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg) 
 
 
 ## [rotate image](https://leetcode.com/problems/rotate-image/) 
