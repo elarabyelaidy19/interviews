@@ -29,9 +29,9 @@
 -  A[i] + A[j] + A[k] < target, which means the numbers between j and k are all less than target, because the array is sorted. Then we move the j pointer forward. 
 - If A[i] + A[j] + A[k] >= target, we move k pointer backward. 
 
-## [subarray product less than k](leetcode.com/problems/subarray-product-less-than-k/) 
-- two pointers, one for aqcuiring the product, one for resucin if the product is greater than k. 
-- when the product is greater than k, resduce product by divid on left.
+## [subarray product less than k](https://leetcode.com/problems/subarray-product-less-than-k/) 
+- two pointers, one for aqcuiring the product, one for reduces if the product is greater than k. 
+- when the product is greater than k, resduce product by divide num on left.
 - when the product is less than k, increase count by (r-l+1). 
 - every step introduce x new subarray (5, 2) => (5, (2, (6))) here we introduced three subarrays (6), (2,6), (5,2,6) 
 

@@ -80,6 +80,7 @@ public class TwoPointers {
             product *= nums[r]; 
             while(product >= k && r >= l) product /= nums[l++]; // when product execced k reduce number on the left
             res += r - l + 1; // every step introduce x new subarray (5, 2) =>  (5, (2, (6))) here we introduced three subarrays (6), (2,6), (5,2,6) 
+            r++;
         }
         return res;
     }
@@ -172,7 +173,7 @@ public class TwoPointers {
         int count = 0; 
         for(int i = 0; i < nums.length-2; i++) { 
             if(i == 0 || nums[i] != nums[i-1]) { 
-                int sum = target - nums[i]; // num[i] + nums[lo] + nums[hi] < target == nums[lo] + nums[hi] < target - nums[i]  
+                int sum = target - nums[i]; // nums[i] + nums[lo] + nums[hi] < target == nums[lo] + nums[hi] < target - nums[i]  
                 int lo = i+1; 
                 int hi = nums.length-1; 
                 while(hi >= lo) { 
