@@ -62,4 +62,7 @@ public class Solution {
 - find first decreasing number, swap with next num bigger in right, reverse the rest.  
 
 ## [3sum](https://leetcode.com/problems/3sum/)
-- sort, two pointers, if sum < 0, move left, if sum > 0, move right.
+- sort, two pointers, if sum < 0, move left, if sum > 0, move right. 
+
+## [subsets](leetcode.com/problems/subsets) 
+- 
