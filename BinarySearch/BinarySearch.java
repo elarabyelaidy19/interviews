@@ -27,7 +27,7 @@ public class BinarySearch {
             int mid = (l + r) / 2; 
             if(arr[mid] == target) { 
                 return mid;
-            } else if(num[mid] > target) { 
+            } else if(arr[mid] > target) { 
                 r = mid - 1;
             } else { 
                 l = mid + 1;
@@ -45,7 +45,7 @@ public class BinarySearch {
             int res = guess(n); 
             if (res == 0) { 
                 return mid;
-            } else if (res = 1) { 
+            } else if (res == 1) { 
                 l = mid + 1; 
             } else { 
                 r = mid - 1;
@@ -67,7 +67,7 @@ public class BinarySearch {
         int r = arr.length-1; 
         while(r > l) { 
             int mid = l + (r - l) / 2; 
-            if(arr[mid] <= targest) { 
+            if(arr[mid] <= target) { 
                 l = mid + 1;
             } else { 
                 r = mid;
@@ -97,6 +97,24 @@ public class BinarySearch {
             }
         } 
         return nums[l] < target ? l : -1;
+    } 
+
+    // compute and return the square root of x. 
+    public int sqrtX(int x) { 
+        if(x == 0) return 0;
+        int lo = 1; 
+        int hi = x; 
+        int res = 0;
+        while(hi >= lo) { 
+            int mid = lo + (hi - lo) / 2;  
+            if(mid <= (x/mid)) { 
+                lo = mid + 1; 
+                res = mid; 
+            } else { 
+                hi = mid - 1;
+            }
+        }
+        return res;
     }
 
 }
