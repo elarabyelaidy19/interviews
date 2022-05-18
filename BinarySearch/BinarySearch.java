@@ -115,6 +115,43 @@ public class BinarySearch {
             }
         }
         return res;
+    } 
+
+    // ===================================================================  
+    // search in a rotated sorted array >>> [4,5,6,7,0,1,2] 3  
+    public int search(int[] nums, int target) {
+        int minIdx = bsearch(nums); // idx of min num
+        if (nums[minIdx] == target)
+            return minIdx;
+        int n = nums.length - 1;                                                
+        int lo = (nums[n] >= target) ? minIdx : 0; //   where to go with lo [[4,5,6,7]  [0,1,2]]  1 => lo = minIdx , hi = n
+        int hi = (nums[n] < target) ? minIdx : n;  // where to go with hi       
+
+        while (hi >= lo) {
+            int mid = (hi + lo) >> 1;
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[mid] > target)
+                hi = mid - 1;
+            else
+                lo = mid + 1;
+        }
+        return -1;
     }
+
+    // find index of the minimum num in the array
+    public int bsearch(int[] nums) {
+        int lo = 0;
+        int hi = nums.length - 1;
+        while (hi > lo) {
+            int mid = (hi + lo) >> 1;
+            if (nums[mid] > nums[hi])
+                lo = mid + 1;
+            else
+                hi = mid;
+        }
+        return lo;
+    }
+
 
 }
