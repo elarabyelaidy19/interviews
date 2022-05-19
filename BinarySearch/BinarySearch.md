@@ -16,4 +16,7 @@
  
 ## [first bad version](https://leetcode.com/problems/first-bad-version/) 
 - binary search for first bad version. lo
-- 
+-  
+
+## [find peak element](https://leetcode.com/problems/find-peak-element/) 
+- binary search for peak element. nums[ele] > nums[ele+1]

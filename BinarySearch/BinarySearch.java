@@ -165,6 +165,19 @@ public class BinarySearch {
             else lo = mid + 1;
         }
         return lo;
-    } 
+    }  
+
+    // ================================================================== 
+    // find peak element [1,2,3,1] result 3  2 < 3 > 1 
+    public int peakElement(int[] nums) { 
+        int lo = 0; 
+        int hi = nums.length-1; 
+        while(hi > lo) { 
+            int mid = (hi + lo) >>> 1; 
+            if(nums[mid] < nums[mid+1]) lo = mid + 1; 
+            else hi = mid;
+        }
+        return lo;
+    }
 
 }
