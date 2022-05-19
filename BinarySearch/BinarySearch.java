@@ -154,4 +154,17 @@ public class BinarySearch {
     }
 
 
+    // =============================================================== 
+    // given [1..n] product versions find the first bad version which causes all following ones will be bad. 
+    public int badVersion(int n) { 
+        int lo = 1; 
+        int hi = n; 
+        while(hi > lo) { 
+            int mid = (lo + hi) >>> 1; 
+            if(isBadVersion(mid)) hi = mid; 
+            else lo = mid + 1;
+        }
+        return lo;
+    } 
+
 }

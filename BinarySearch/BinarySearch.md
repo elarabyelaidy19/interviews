@@ -11,5 +11,9 @@
 
 ## [search in rotated sorted array](https://leetcode.com/problems/search-in-rotated-sorted-array/) 
 - split the array into two parts on the min elemnet of array. bsearch the min element.  
-- locate lo and hi depending on the target.
+- locate lo and hi depending on the target which part is in.
 
+ 
+## [first bad version](https://leetcode.com/problems/first-bad-version/) 
+- binary search for first bad version. lo
+- 
