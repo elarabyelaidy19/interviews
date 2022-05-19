@@ -19,4 +19,8 @@
 -  
 
 ## [find peak element](https://leetcode.com/problems/find-peak-element/) 
-- binary search for peak element. nums[ele] > nums[ele+1]
+- binary search for peak element. nums[ele] > nums[ele+1] 
+
+## [find minimum in roted sorted array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- compare mid with high, if mid > high go right, if mid < high go left. 
+- templete 2

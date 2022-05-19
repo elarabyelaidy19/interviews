@@ -180,4 +180,17 @@ public class BinarySearch {
         return lo;
     }
 
+
+    // ==================================================================== 
+    // find min in rotated sorted array  
+    public int findMin(int[] nums) { 
+        int lo = 0; 
+        int hi = nums.length - 1; 
+        while(hi > lo) { 
+            int mid = (hi + lo) >>> 1; 
+            if(nums[mid] > nums[hi]) lo = mid + 1; 
+            else hi = mid;
+        }
+        return nums[hi];
+    }
 }
