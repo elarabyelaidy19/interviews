@@ -64,17 +64,13 @@ int binarySearch(int[] nums, int target){
 ```
 
 # Templete 3  
+used to search for an element or condition which requires accessing the current index and its immediate left and right neighbor's index in the array.
+
+- Initial Condition: left = 0, right = length-1
+- Termination: left + 1 == right
+- Searching Left: right = mid
+- Searching Right: left = mid
 
 
 
-# Tricks 
-```java 
-while(hi-lo > 1) { 
-    if(check(mid)) { 
-        lo = mid; 
-    } else { 
-        hi = mid; 
-    } 
-}
-```
 

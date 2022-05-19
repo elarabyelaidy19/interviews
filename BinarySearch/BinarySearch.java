@@ -192,5 +192,25 @@ public class BinarySearch {
             else hi = mid;
         }
         return nums[hi];
+    } 
+
+    // =========================================================================== 
+    // return the minimum i such that nums[i] == i. If there's no solution, return -1. 
+    public int findMinIndex(int[] nums) { 
+        int lo = 0; 
+        int hi = nums.length - 1; 
+        int res = -1; 
+        while(hi >= lo) { 
+            int mid = (hi + lo) >> 1; 
+            if(nums[mid] == mid) { 
+                res = mid; 
+                hi = mid - 1; // search in left for minimum element if there that satisfy  
+            } else if(nums[mid] > mid) { 
+                hi = mid - 1;
+            } else { 
+                lo = mid + 1;
+            }
+        }
+        return res;
     }
 }
