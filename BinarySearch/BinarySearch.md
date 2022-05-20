@@ -1,3 +1,7 @@
+## Missing
+return for find K closest element.  
+complete explore card of Leetcode.
+
 
 ## [PeakMountainIndexArray](https://leetcode.com/problems/peak-index-in-a-mountain-array/) 
 - search for the first number that is greater than its neighbors. arr[i] > arr[i+1] 
@@ -24,3 +28,8 @@
 ## [find minimum in roted sorted array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 - compare mid with high, if mid > high go right, if mid < high go left. 
 - templete 2
+
+
+
+
+

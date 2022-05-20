@@ -72,5 +72,50 @@ used to search for an element or condition which requires accessing the current 
 - Searching Right: left = mid
 
 
+```java 
+
+public int bsearch(int[] nums, int k) { 
+  int lo = 0; 
+  int hi = nums.length - 1; 
+  while(lo + 1 < hi) { 
+    int mid = (hi + lo) >>> 1; 
+    if(nums[mid] == k) { 
+      return mid;
+    } else if(nums[mid] < k) { 
+      lo = mid;
+    } else { 
+      hi = mid;
+    }
+  } 
+  if(nums[lo] == k) return lo;
+  if(nums[hi] == k) return hi;
+  return -1;
+}
+```
 
 
+# Notes 
+- when find minimum or maximum, upper bound and lower bound are needed. or range. 
+
+```java 
+public int findMinIndex(int[] nums) { 
+        int lo = 0; 
+        int hi = nums.length - 1; 
+        int res = -1; 
+        while(hi >= lo) { 
+            int mid = (hi + lo) >> 1; 
+            if(nums[mid] == mid) { 
+                res = mid; 
+                hi = mid - 1; // search in left for minimum element if there that satisfy  
+            } else if(nums[mid] > mid) { 
+                hi = mid - 1;
+            } else { 
+                lo = mid + 1;
+            }
+        }
+        return res;
+    }
+```
+ 
+# [Anlysis for the three templets](https://leetcode.com/explore/learn/card/binary-search/136/template-analysis/935/)
+![differnces](https://leetcode.com/explore/learn/card/binary-search/136/template-analysis/Figures/binary_search/Template_Diagram.png) 

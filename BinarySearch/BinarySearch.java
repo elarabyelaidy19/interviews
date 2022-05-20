@@ -7,10 +7,9 @@ public class BinarySearch {
     int peakIndexMountainArray(int[] arr) {
         int l = 0;
         int r = arr.length - 1;
-        int m = 0;
         while (r > l) {
-            m = (l + r) / 2;
-            if (arr[m] < arr[m + 1])
+            int mid = (l + r) / 2;
+            if (arr[m] < arr[m + 1]) // until element < elment + 1 shrink, when condition fail we found Peak
                 l = m + 1;
             else
                 r = m;
@@ -124,7 +123,7 @@ public class BinarySearch {
         if (nums[minIdx] == target)
             return minIdx;
         int n = nums.length - 1;                                                
-        int lo = (nums[n] >= target) ? minIdx : 0; //   where to go with lo [[4,5,6,7]  [0,1,2]]  1 => lo = minIdx , hi = n
+        int lo = (nums[n] >= target) ? minIdx : 0; //   where to go with lo [[4,5,6,7]  [0,1,2]]  t = 1 => lo = minIdx , hi = n
         int hi = (nums[n] < target) ? minIdx : n;  // where to go with hi       
 
         while (hi >= lo) {
@@ -212,5 +211,57 @@ public class BinarySearch {
             }
         }
         return res;
+    } 
+
+
+    // ======================================================================================== 
+    // Given an array of integers nums sorted in non-decreasing order, find the
+    // starting and ending position of a given target value. If targe is not found in the array,return[-1,-1]. 
+
+    public int[] searchRange(int[] nums, int target) {
+        int[] res = { -1, -1 };
+        if (nums == null || nums.length == 0) {
+            return res;
+        }
+        res[0] = lower(nums, target);
+        res[1] = upper(nums, target);
+        return res;
     }
+
+    public int lower(int[] nums, int t) {
+        int lo = 0;
+        int hi = nums.length - 1;
+        int lowr = -1;
+        while (hi >= lo) {
+            int mid = (hi + lo) >>> 1;
+            if (nums[mid] == t) {
+                lowr = mid;  // set lowr =  mid and goes left for another value with minimum idx  [5,7,7,8,8,8,10] t =8 
+                hi = mid - 1; 
+            } else if (nums[mid] > t) {
+                hi = mid - 1;
+            } else {
+                lo = mid + 1;
+            }
+        }
+        return lowr;
+    }
+
+    public int upper(int[] nums, int t) {
+        int lo = 0;
+        int hi = nums.length - 1;
+        int uppr = -1;
+        while (hi >= lo) {
+            int mid = (hi + lo) >>> 1;
+            if (nums[mid] == t) {
+                uppr = mid; // set upper = mid and goes right seacrh for another value with maximum idx
+                lo = mid + 1;
+            } else if (nums[mid] > t) {
+                hi = mid - 1;
+            } else {
+                lo = mid + 1;
+            }
+        }
+        return uppr;
+    }
+
 }
