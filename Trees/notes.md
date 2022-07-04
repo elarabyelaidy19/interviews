@@ -104,10 +104,10 @@ end
     end 
 ```
 
-
+<b>
 - inorder traversal of binary search tree is sorted. 
 - deleting a node process happen in postorder. left child is deleted first and then right child.
-
+</b>
 
 ## Level Order Traversal 
 
@@ -129,3 +129,22 @@ def level_order(root)
     res
 end
 ```
+
+
+# Tree Top Down Approach
+
+```ruby 
+def top_down(node, depth)
+    return if node.nil? 
+    max_depth = 1
+    if(node.left.nil? && node.right.nil?) 
+        max_depth = [max_depth, depth].max
+    end 
+    top_down(node.left, depth+1) 
+    top_down(node.right, depth+1)
+end 
+```
+
+
+# Tree Bottom Up 
+ 

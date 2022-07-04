@@ -108,5 +108,39 @@ public class Trees {
             prev = root;
             inorder(root.right);
         }
+    } 
+
+
+    // ============================================================================== 
+    // max depth of a tree 
+
+    public int maxDepth(TreeNode root) {
+
+        if (root == null)
+            return 0;
+
+        Stack<TreeNode> nodes = new Stack<>();
+        Stack<Integer> depths = new Stack<>();
+        int max = 1;
+
+        nodes.push(root);
+        depths.push(1);
+        while (!nodes.empty()) {
+            TreeNode current = nodes.pop();
+            int depth = depths.pop();
+            
+            if (current.left == null && current.right == null) {
+                max = Math.max(depth, max);
+            }
+            if (current.left != null) {
+                nodes.push(current.left);
+                depths.push(depth + 1);
+            }
+            if (current.right != null) {
+                nodes.push(current.right);
+                depths.push(depth + 1);
+            }
+        }
+        return max;
     }
 } 
