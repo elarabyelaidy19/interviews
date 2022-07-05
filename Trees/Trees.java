@@ -1,5 +1,7 @@
 package Gem.Trees;
 
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 public class Trees { 
 
     class TreeNode {
@@ -114,6 +116,7 @@ public class Trees {
     // ============================================================================== 
     // max depth of a tree 
 
+    // iterative
     public int maxDepth(TreeNode root) {
 
         if (root == null)
@@ -128,7 +131,7 @@ public class Trees {
         while (!nodes.empty()) {
             TreeNode current = nodes.pop();
             int depth = depths.pop();
-            
+
             if (current.left == null && current.right == null) {
                 max = Math.max(depth, max);
             }
@@ -142,5 +145,32 @@ public class Trees {
             }
         }
         return max;
+    }
+
+    // Recursive 
+    public int maxDepth2(TreeNode root) { 
+        if(root == null) return 0; 
+        int left = maxDepth2(root.left); 
+        int right = maxDepth2(root.right); 
+        return Math.max(left, right)+1;
+    }
+
+    // ========================================================================= 
+    public boolean isSymmetric(TreeNode root) { 
+        if(root == null) { 
+            return true;
+        }
+        return Symmetric(root.left, root.right);
+    }
+
+    public boolean Symmetric(TreeNode leftTree, TreeNode rightTree) { 
+        if(leftTree == null || rightTree == null) { 
+            return leftTree == rightTree;
+        }
+
+        if(leftTree.val != rightTree.val) { 
+            return false;
+        }
+        return Symmetric(leftTree.left, rightTree.right) && Symmetric(leftTree.right, rightTree.left);
     }
 } 
