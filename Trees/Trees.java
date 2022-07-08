@@ -172,5 +172,17 @@ public class Trees {
             return false;
         }
         return Symmetric(leftTree.left, rightTree.right) && Symmetric(leftTree.right, rightTree.left);
+    } 
+
+
+    // =========================================================================
+    // has path sum 
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null)
+            return false;
+        if (root.left == null && root.right == null && targetSum - root.val == 0)
+            return true;
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
     }
 } 
