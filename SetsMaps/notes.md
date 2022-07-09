@@ -69,4 +69,7 @@ set.size();
 - [explanation](https://leetcode.com/problems/design-hashmap/discuss/1097755/JS-Python-Java-C%2B%2B-or-(Updated)-Hash-and-Array-Solutions-w-Explanation) 
 - hash function for mapping 
 - linked list for chaining 
-- large size to minimize collisions.
+- large size to minimize collisions. 
+
+## [intersection of two arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) 
+-
