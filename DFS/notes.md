@@ -13,7 +13,7 @@ Space: O(|V|)
 
 ## Code 
 ```java 
-public void dfd(List<List<Integer>> graph) { 
+public void dfs(List<List<Integer>> graph) { 
     Stack<Integer> stack = new Stacl<>(); 
     boolean[] visited = new boolean[graph.size()]; 
     stack.push(0);  

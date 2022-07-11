@@ -40,3 +40,6 @@
 
 ## [spiral matrix II](https://leetcode.com/problems/spiral-matrix-ii/)
 - same as spiral matrix1.
+ 
+## [reshare matrix](https://leetcode.com/problems/reshape-the-matrix/) 
+- loop through matrix each cols until end if cols == c then start new row. 
