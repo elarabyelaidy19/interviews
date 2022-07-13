@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 public class Trees2 {  
 
@@ -29,5 +30,30 @@ public class Trees2 {
         root.right = rightTree;
         return root;
 
+    } 
+
+
+    // ============================================================================================================== 
+    // construct a binary tree from preorder and inorder traversal. 
+
+    public TreeNode buildTree2(int[] preorder, int[] inorder) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+        TreeNode root = buildTreeNode(preorder, inorder, 0, inorder.length - 1, 0, preorder.length - 1, map);
+        return root;
+    }
+
+    public TreeNode buildTreeNode2(int[] preorder, int[] inorder, int inStart, int inEnd, int preStart, int preEnd,
+            HashMap<Integer, Integer> map) {
+        if (inStart > inEnd || preStart > preEnd)
+            return null;
+        TreeNode root = new TreeNode(preorder[preStart]);
+        int rootIndex = map.get(root.val);
+        int numsLeft = rootIndex - inStart;
+        root.left = buildTreeNode(preorder, inorder, inStart, rootIndex - 1, preStart + 1, preStart + numsLeft, map);
+        root.right = buildTreeNode(preorder, inorder, rootIndex + 1, inEnd, preStart + numsLeft + 1, preEnd, map);
+        return root;
     }
 }
