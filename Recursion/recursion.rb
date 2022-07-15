@@ -17,10 +17,6 @@ end
 def sum_array(arr) 
     n = arr.length-1  
     return 0 if arr.empty? 
-    print arr 
-    puts 
-    print n 
-    puts
     return arr.pop + sum_array(arr)
 end 
 
@@ -34,19 +30,41 @@ def mul(arr)
 end 
 
 # print mul([1,2,3,4,5])
-
-
 def reverse(str) 
     return str if str.length <= 1 
-    n = str.length-1 
-    puts 
-    print n 
-    puts
-    print str[0..n-1]
-    puts 
-    print str[n]   
+    n = str.length-1    
     return str[n] + reverse(str[0..n-1])
 end 
 
 puts reverse("string")
 
+
+def count_down(n) 
+    return 0 if n < 1  
+
+    return count_down(n-1)  
+end 
+
+# p count_down(10)
+
+def count_up(m, n) 
+    return  if m >= n 
+    count_up(m+1, n)
+end 
+
+
+def foo 
+    g = "enclosed var" 
+    p "in foo #{g}"
+    def foo2 
+        f = "local var"  
+        p "in foo2 #{f}" 
+        f
+    end 
+    g = foo2 
+end 
+
+f = "Iam global"
+
+p f 
+p foo

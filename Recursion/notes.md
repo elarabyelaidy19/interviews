@@ -1,10 +1,8 @@
 ## [Recursion Explaination On Leetcode](https://leetcode.com/discuss/study-guide/1733447/Become-Master-In-Recursion) 
 > Leeetcode Post on Recursion  
 
-## [Mr Algoritms Course Video](https://www.youtube.com/playlist?list=PLR5x_RGTMNNXHdQp1EorhZq-t3TOWCNis) 
-
-
-## [Visualize Recursion](https://recursion.vercel.app/) 
+## [understanding recursion](https://understanding-recursion.readthedocs.io/en/latest/index.html) 
+> small book on recursion
 
 
 # Divide-and-Conquer approach:
@@ -40,6 +38,4 @@ def fib(n)
     fib(n-1) 
     fib(n-2)
 end  
-
-
 ```
