@@ -18,4 +18,6 @@
 - find root from postorder(last element) and inorder traversal. map each node to its index in the inorder traversal. 
 - recursively find the left and right subtrees. left subtree is the subarray from inorder[start] to inorder[rootIndex-1], right subtree is the subarray from inorder[rootIndex+1] to inorder[end]. 
 - recursively find the left and right subtrees for postorder[start] to postorder[start+leftlen], postorder[end-rightLen-1] to postorder[end-1].
-- leftLen = rootIndex - startInorder - 1, rightLen = Inorderend - rootIndex - 1.
+- leftLen = rootIndex - startInorder - 1, rightLen = Inorderend - rootIndex - 1. 
+
+## [construct binary tree from inorder and preorder traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) 
