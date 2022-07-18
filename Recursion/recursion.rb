@@ -67,4 +67,13 @@ end
 f = "Iam global"
 
 p f 
-p foo
+p foo 
+
+
+!n = n * n-1 * n-2 * n-3 * .... 1
+def fact(n) 
+    return 1 if n <= 1 
+    n * fact(n-1)
+end 
+
+fact(5)

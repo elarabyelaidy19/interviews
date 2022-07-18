@@ -41,7 +41,6 @@ end
 
 def post(root, res) 
     return res if root.nil? 
-
     post(root.left, res) 
     post(root.right, res) 
     res << root.val

@@ -21,3 +21,4 @@
 - leftLen = rootIndex - startInorder - 1, rightLen = Inorderend - rootIndex - 1. 
 
 ## [construct binary tree from inorder and preorder traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) 
+- same as postorder and inorder traversal. but the difference is that the preorder[first] traversal is the root.

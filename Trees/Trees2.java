@@ -55,5 +55,29 @@ public class Trees2 {
         root.left = buildTreeNode(preorder, inorder, inStart, rootIndex - 1, preStart + 1, preStart + numsLeft, map);
         root.right = buildTreeNode(preorder, inorder, rootIndex + 1, inEnd, preStart + numsLeft + 1, preEnd, map);
         return root;
+    } 
+
+
+    // ============================================================================================================== 
+    // Invert Binary Tree 
+
+    public TreeNode invertBinaryTree(TreeNode root) { 
+        if(root == null) return null; 
+        TreeNode temp = root.left; 
+        root.left = root.right; 
+        root.right = temp; 
+        invertBinaryTree(root.left); 
+        invertBinaryTree(root.right); 
+        return root;
+    } 
+
+
+    // =============================================================================================================== 
+    // search binary search tree  
+    public TreeNode searhBST(TreeNode root, int val) { 
+        while(root != null && root.val != val) { 
+            root = root.val > val ? root.left : root.right;
+        }
+        return root;
     }
 }
