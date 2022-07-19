@@ -8,21 +8,25 @@
 ## Level Order Traversal 
 - traverse each level every time, you can not goes to further level without visits all nodes in this level.
 
-<b>
-- inorder traversal of binary search tree is sorted. 
-- deleting a node process happen in postorder. left child is deleted first and then right child.
-</b>
 
-# Tree Top Down Approach 
+- inorder traversal of binary search tree is sorted. 
+
+- deleting a node process happen in postorder. left child is deleted first and then right child.
+
+### Tree Top Down Approach 
 - traverse the tree from top to bottom.
 
-# Tree Bottom Up 
+### Tree Bottom Up 
 - traverse the tree from bottom to top.
 
 # Trees Properties
 - ## Symmetric Tree
     - left subtree is mirror image of right subtree. 
     - both trees are empty or both are not.
-    - 
+
+
+
+# Binary Search Tree
+
 
 
