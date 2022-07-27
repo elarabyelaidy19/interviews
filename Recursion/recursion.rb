@@ -70,10 +70,31 @@ p f
 p foo 
 
 
-!n = n * n-1 * n-2 * n-3 * .... 1
+#!n = n * n-1 * n-2 * n-3 * .... 1
 def fact(n) 
     return 1 if n <= 1 
     n * fact(n-1)
 end 
 
 fact(5)
+
+
+$frame = 0 
+n = 4 
+p "global frame #{$frame} and n = #{n}"
+def summ(n) 
+    $frame+=1 
+    p $frame
+    if n == 1    
+        p "base case frame #{$frame} and n = #{n}"
+        return n 
+    else   
+        p "recursive frame #{$frame} and n = #{n}"
+        r = summ(n-1)  
+        #$frame-=1 
+        p "recursive frame #{$frame} and n = #{n} and r #{r}"
+        return n + r 
+    end 
+end 
+
+p summ(n)
