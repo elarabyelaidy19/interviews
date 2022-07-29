@@ -91,5 +91,23 @@ public class Trees2 {
         if(root == null) return true; 
         if(root.val <= min || root.val >= max) return false; 
         return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max); 
+    } 
+
+
+    // =============================================================================================================== 
+
+    public TreeNode connect(TreeNode root) { 
+        TreeNode curr = root; 
+        while(curr != null) { 
+            TreeNode curr_level = curr; 
+            while(curr_level != null) { 
+                if(curr_level.left != null) curr_level.left.next = curr_level.right; 
+                if(curr_level.right != null && curr_level.next != null) curr_level.right.next = curr_level.next.left; 
+
+                curr_level = curr_level.next;
+            } 
+            curr = curr.left;
+        }
+        return root;
     }
 }
