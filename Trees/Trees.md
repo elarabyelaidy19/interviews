@@ -22,3 +22,11 @@
 
 ## [construct binary tree from inorder and preorder traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) 
 - same as postorder and inorder traversal. but the difference is that the preorder[first] traversal is the root.
+
+## [populating next right pointers in each node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) 
+- traverse level by level every root.left.next = root.right. and root.right.next = root.next.left.
+- keep of the root node.
+
+## [populating next right pointers in each node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
+- every change to dummy node is also reflected on the end node.
+- 

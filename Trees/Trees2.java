@@ -95,7 +95,7 @@ public class Trees2 {
 
 
     // =============================================================================================================== 
-
+    // populate next right pointers in each node
     public TreeNode connect(TreeNode root) { 
         TreeNode curr = root; 
         while(curr != null) { 
@@ -109,5 +109,43 @@ public class Trees2 {
             curr = curr.left;
         }
         return root;
+    }
+
+
+    // ===============================================================================================================
+    // populate next right pointers in each node II
+    public TreeNode connect2(TreeNode head) {
+        TreeNode root = head;
+        while (root != null) {
+            TreeNode dummy = new TreeNode(0);
+            TreeNode end = dummy;
+            while (root != null) {
+                if (root.left != null) {
+                    end.next = root.left;
+                    end = root.left;
+                }
+
+                if (root.right != null) {
+                    end.next = root.right;
+                    end = root.right;
+                }
+                root = root.next;
+            }
+            root = dummy.next;
+        }
+        return head;
+
+    }
+
+
+    // ===============================================================================================================
+    // lowest common ancestor of binary tree
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) { 
+        if(root == null) return null; 
+        if(root == p || root == q) return root; 
+        TreeNode left = lowestCommonAncestor(root.left, p, q); 
+        TreeNode right = lowestCommonAncestor(root.right, p, q); 
+        if(left != null && right != null) return root; 
+        return left != null ? left : right; 
     }
 }
