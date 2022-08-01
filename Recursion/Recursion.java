@@ -1,5 +1,9 @@
 package Recursion;
-import java.util.List; 
+import java.util.List;
+
+import javax.swing.tree.TreeNode;
+
+import org.w3c.dom.Node;
 
 import java.util.ArrayList;;
 public class Recursion {
@@ -41,5 +45,39 @@ public class Recursion {
         if (index == chars.length || chars == null) return; 
         helper(index+1, chars); 
         System.out.println(chars[index]);
+    } 
+
+
+    // ================================================================
+    // reverse linked list recursively 
+    public TreeNode reverse(TreeNode head) { 
+        if(head == null || head.next == null) return head; 
+        TreeNode newHead = reverse(head.next); 
+        head.next.next = head; 
+        head.next = null; 
+        return newHead;
+    }
+    // ================================================================
+    public TreeNode reverseLisNode(TreeNode head) { 
+        return helperReverse(head, null);
+    }
+    
+    private TreeNode helperReverse(TreeNode curr, TreeNode pre) { 
+        if(curr == null) { 
+            return pre;
+        }
+
+        ListNode nxt = curr.next; 
+        curr.next = pre; 
+        return helperReverse(nxt, pre);
+    } 
+
+
+    // ====================================================================== 
+    // search binary search tree 
+    public TreeNode searh_bst(TreeNode head, int val) { 
+        if (root == null) return null; 
+        if (root.val == val) return head; 
+        return root.val > val ? searh_bst(head.left, val) : searh_bst(head.right, val);
     }
 }
