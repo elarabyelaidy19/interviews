@@ -30,4 +30,16 @@ public class Recursion {
         int n = Str.length()-1; 
         return Str.charAt(n) + reveString(Str.substring(0, n-1));
     }
+
+    // print reverse string recursively 
+
+    public void printReverse(char[] chars) { 
+        helper(0, chars);
+    } 
+    
+    public void helper(int index, char[] chars) { 
+        if (index == chars.length || chars == null) return; 
+        helper(index+1, chars); 
+        System.out.println(chars[index]);
+    }
 }

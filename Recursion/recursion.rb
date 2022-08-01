@@ -34,6 +34,10 @@ def reverse(str)
     return str if str.length <= 1 
     n = str.length-1    
     return str[n] + reverse(str[0..n-1])
+end  
+
+def reverse_array_chars(str) 
+    
 end 
 
 puts reverse("string")
@@ -66,8 +70,8 @@ end
 
 f = "Iam global"
 
-p f 
-p foo 
+# p f 
+# p foo 
 
 
 #!n = n * n-1 * n-2 * n-3 * .... 1
@@ -97,4 +101,35 @@ def summ(n)
     end 
 end 
 
-p summ(n)
+# p summ(n)
+
+
+
+
+def decimal_to_binary(n) 
+    return 0 if n == 0 
+    bin = 10 * decimal_to_binary(n/2) 
+    p "bin is  #{bin} "  
+    quo = n % 2 
+    p "quo is #{quo}" 
+
+    puts 
+    return quo + bin
+end 
+
+p decimal_to_binary(17) 
+
+
+def print_rverse(chars) 
+    helper(0, chars)
+end 
+
+def helper(idx, chars) 
+    return if idx >= chars.size || chars.nil?
+    p idx
+    helper(idx+1, chars) 
+    p idx
+    p chars[idx]
+end 
+
+p print_rverse('hello')
