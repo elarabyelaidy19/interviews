@@ -22,7 +22,6 @@ def subsets(nums)
     return res
 end 
 
-
 def solve(nums, i, sub, res) 
     if i == nums.length 
         res << sub.dup 
@@ -37,6 +36,9 @@ def solve(nums, i, sub, res)
     solve(nums, i+1, sub, res)
 
 end 
-
-
 ```
+
+
+# General Notes 
+- once it say find every possible **Think of backtracking** 
+- draw state space tree 

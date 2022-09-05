@@ -43,5 +43,57 @@ public class BackTracking {
         if(open > close) { 
             backtrack(out, str+")", open, close+1, max);
         }
+    } 
+
+
+
+    //==================================================================================================== 
+    // combination sum 
+
+    public List<List<Integer>> combinationSum(int[] nums, int target) { 
+        List<List<Integer>> subs = new ArrayList<>();
+        List<Integer> sub = new ArrayList<>();
+        solve(subs, sub, candidates, 0, target);
+        return subs;
+    } 
+
+    private void solve(List<List<Integer>> subs, List<Integer> sub, int[] nums, int i, int target) {  
+        if(target == 0) { 
+            subs.add(new ArrayList<>(sub));
+            return;
+        }
+        if(target < 0 || i >= nums.length) { 
+            return;
+        } else { 
+            sub.add(nums[i]); 
+            solve(subs, sub, nums, i, target-nums[i]);
+
+            sub.remove(sub.get(sub.size()-1)); 
+            solve(subs, sub, nums, i+1, target);
+        }
+    } 
+
+
+
+    // =========================================================================================== 
+    public List<List<Integer>> subsets(int[] nums) { 
+        List<List<Integer>> subsets = new ArrayList<>();
+        List<Integer> subset = new ArrayList<>();
+        backtrack(nums, 0, subset, subsets);
+        return subsets;
+    } 
+
+    private void backtrack(int[] nums, int start, List<Integer> subset, List<List<Integer>> subsets) { 
+        if(start >= nums.length) { 
+            subsets.add(new ArrayList<>(subset));
+            return;
+        }
+
+        subset.add(nums[i]); 
+        backtrack(nums, start+1, subset,subsets); 
+
+        subset.remove(subset.get(subset.size()-1)); 
+        backtrack(nums, start+1, subset, subsetss);
     }
+
 }
