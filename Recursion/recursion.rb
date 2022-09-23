@@ -132,4 +132,53 @@ def helper(idx, chars)
     p chars[idx]
 end 
 
-p print_rverse('hello')
+p print_rverse('hello') 
+
+
+
+
+def subsequence(str) 
+    if str.empty?
+        return "" 
+    else 
+        flitter = str[0] 
+        restOfword = str[1..-1]
+
+        subsequence_rest = subsequence(restOfword) 
+
+        res = "" 
+        subsequence_rest.split(",",-1).each do |sub| 
+            res += "," + sub 
+            res += "," + flitter + sub 
+        end 
+        res = res[1..-1] 
+        res 
+    end  
+end
+
+
+def  helper2(decimal, res) 
+    return res if decimal == 0 
+    res = (decimal % 2).to_s + res 
+    return helper2(decimal/2, res)
+end 
+
+p helper2(133, "")
+
+
+def search(arr, target) 
+    bsearch(arr, target, 0, a)
+end 
+
+
+def bsearch(arr, target, l, r) 
+    return  -1 if l > r
+    mid = (l + r) / 2 
+    if arr[mid] == target 
+        return mid 
+    elsif arr[mid] > target 
+        bsearch(arr, target, l, mid-1)
+    else 
+        bsearch(arr, target, mid+1, r) 
+    end
+end 

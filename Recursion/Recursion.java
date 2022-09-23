@@ -80,4 +80,14 @@ public class Recursion {
         if (root.val == val) return head; 
         return root.val > val ? searh_bst(head.left, val) : searh_bst(head.right, val);
     }
+
+
+    // =========================================================================== 
+
+    public static String decimalString(int decimal, String res) { 
+        if (decimal == 0) 
+            return res; 
+        res = decimal % 2 + res; 
+        return decimalString(decimal/2, res);
+    }
 }

@@ -30,3 +30,8 @@
 ## [populating next right pointers in each node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
 - every change to dummy node is also reflected on the end node.
 - 
+
+## [lowest common ancestor](https://leetcode.com/problems/lowest-common-ancestor/)
+- if root is null, return root. base case 
+- if root == p or root == q, return root. base case 
+- traverse left and right subtree. the retunrn value from both is the lowest common ancestor. left and right should not be null **there some value return which is either p or q.** 

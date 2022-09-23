@@ -1,8 +1,10 @@
+import java.util.Deque;
+
 public class Deques { 
     // simplify file given some filesystem movement return the result after doing
     // this commands
     public String simplifyPaths(String s) {
-        Deque<String> stack = new LinkedList<>();
+        Deque<String> stack = new java.util.LinkedList<>();
         StringBuilder sb = new StringBuilder();
         for (String dir : s.split("/")) {
             if (dir.equals("..") && !stack.isEmpty())

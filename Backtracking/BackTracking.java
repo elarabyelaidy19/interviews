@@ -52,7 +52,8 @@ public class BackTracking {
 
     public List<List<Integer>> combinationSum(int[] nums, int target) { 
         List<List<Integer>> subs = new ArrayList<>();
-        List<Integer> sub = new ArrayList<>();
+        List<Integer> sub = new ArrayList<>(); 
+        int[] candidates = new int[nums.length];
         solve(subs, sub, candidates, 0, target);
         return subs;
     } 
@@ -76,7 +77,7 @@ public class BackTracking {
 
 
     // =========================================================================================== 
-    public List<List<Integer>> subsets(int[] nums) { 
+    public List<List<Integer>> subsets1(int[] nums) { 
         List<List<Integer>> subsets = new ArrayList<>();
         List<Integer> subset = new ArrayList<>();
         backtrack(nums, 0, subset, subsets);

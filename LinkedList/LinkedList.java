@@ -1,4 +1,3 @@
-package Gem.LinkedList;
 
 import java.util.List;
 
