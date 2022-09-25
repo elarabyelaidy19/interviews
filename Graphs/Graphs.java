@@ -17,8 +17,8 @@ public class Graphs {
     }
 
     public void dfs(char[][] grid, int r, int c) {
-        if (r >= 0 && c >= 0 && r < grid.length && c < grid[0].length && grid[r][c] == '1') {
-            grid[r][c] = '0';
+        if (r > 0 && c > 0 && r < grid.length-1 && c < grid[0].length-1 && grid[r][c] == 1) {
+            grid[r][c] = 0;
             dfs(grid, r + 1, c);
             dfs(grid, r - 1, c);
             dfs(grid, r, c + 1);
@@ -70,13 +70,49 @@ public class Graphs {
     public int dfs(int[][] grid, int r, int c) { 
         if(r >= 0 && r < grid.length && c >= 0 && c < grid[0].length && grid[r][c] == 1) {
             grid[r][c] = 0;
-            return 1 
-                    + dfs(grid, r+1, c) 
-                    + dfs(grid, r-1, c) 
-                    + dfs(grid, r, c+1) 
-                    + dfs(grid, r, c-1);
+            return 1 + dfs(grid, r+1, c) + dfs(grid, r-1, c) + dfs(grid, r, c+1)  + dfs(grid, r, c-1);
         }
         return 0;
+    } 
+
+
+    // ========================================================================================== 
+    // number of enclaves 
+
+    public int numEnclaves(int[][] grid) {
+        int row = grid.length;
+        int col = grid[0].length;
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (isValid(grid, i, j)) {
+                    dfs2(grid, i, j);
+                }
+            }
+        }
+
+        int res = 0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (grid[i][j] == 1)
+                    res++;
+            }
+        }
+        return res;
+    }
+
+    public void dfs2(int[][] grid, int row, int col) {
+        if (row >= 0 && col >= 0 && row <= grid.length - 1 && col <= grid[0].length - 1 && grid[row][col] == 1) {
+            grid[row][col] = 0;
+            dfs(grid, row + 1, col);
+            dfs(grid, row - 1, col);
+            dfs(grid, row, col + 1);
+            dfs(grid, row, col - 1);
+        }
+    }
+
+    public boolean isValid(int[][] A, int row, int col) {
+        return (row == 0 || col == 0 || row == A.length - 1 || col == A[0].length - 1);
     }
 
 }

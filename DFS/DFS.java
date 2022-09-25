@@ -22,5 +22,20 @@ public class DFS {
             if (!v) return false;
         }
         return true;
+    } 
+
+
+
+    //=========================================================================== 
+    // find path 
+
+    public boolean hasPath(List<List<Integer>> graphList, int src, int dist) { 
+        if(src == dist) return true;
+        for(int neigbor : graphList.get(src)) { 
+           if (hasPath(graphList, neigbor, dist) == true) { 
+                return true;
+           }
+        }
+        return false;
     }
 }

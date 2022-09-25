@@ -8,3 +8,8 @@
 
 # [Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
 - **Flood Fill** Algotithm
+
+# [number of Enclaves](https://leetcode.com/problems/number-of-enclaves/)
+- set all the 1s on the border to 0s
+- **Flood Fill** Algotithm
+- count the number of 1s
