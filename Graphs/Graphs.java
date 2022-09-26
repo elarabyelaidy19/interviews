@@ -115,4 +115,43 @@ public class Graphs {
         return (row == 0 || col == 0 || row == A.length - 1 || col == A[0].length - 1);
     }
 
+
+
+
+    // =================================================================================================================== 
+    // number of sub islands
+
+    public int countSubIslands(int[][] grid1, int[][] grid2) {
+        int r = grid1.length;
+        int c = grid1[0].length;
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (grid1[i][j] == 0 && grid2[i][j] == 1) {
+                    floodfill(grid2, i, j);
+                }
+            }
+        }
+
+        int res = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (grid2[i][j] == 1) {
+                    floodfill(grid2, i, j);
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
+
+    public void floodfill(int[][] grid, int row, int col) {
+        if (row < 0 || col < 0 || row >= grid.length || col >= grid[0].length || grid[row][col] == 0)
+            return;
+        grid[row][col] = 0;
+        floodfill(grid, row + 1, col);
+        floodfill(grid, row - 1, col);
+        floodfill(grid, row, col + 1);
+        floodfill(grid, row, col - 1);
+    }
 }
