@@ -1,3 +1,5 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 public class Graphs { 
    
@@ -153,5 +155,47 @@ public class Graphs {
         floodfill(grid, row - 1, col);
         floodfill(grid, row, col + 1);
         floodfill(grid, row, col - 1);
-    }
+    } 
+
+
+    // =================================================================================================
+    // As far as from a land 
+    int[][] dirs = new int[][] { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
+
+    public int maxDistance(int[][] grid) {
+        if(grid == null || grid.length == 0 || grid[0].length == 0) return -1; 
+        boolean[][] visited = new boolean[grid.length][grid[0].length]; 
+        Queue<int []> q = new ArrayDeque<>(); 
+        for(int i = 0; i < grid.length; i++) { 
+            for(int j = 0; j < grid[0].length; j++) { 
+                if(grid[i][j] == 1) { 
+                    q.offer(new int[]{i, j}); 
+                    visited[i][j] = true;
+                }
+            }
+        }
+        
+        int res = -1;
+        while(!q.isEmpty()) { 
+            int size = q.size(); 
+            for(int i = 0; i < size; i++) { 
+                int[] start = q.poll(); 
+                int x = start[0]; 
+                int y = start[1]; 
+                
+                for(int[] dir: dirs) { 
+                    int newX = x + dir[0]; 
+                    int newY = y + dir[1]; 
+                    
+                    if(newX >= 0 && newY >= 0 && grid.length > newX && grid[0].length > newY && 
+                       !visited[newX][newY] && grid[newX][newY] == 0) { 
+                        visited[newX][newY] = true;
+                        q.offer(new int[] {newX, newY});
+                    }
+                }
+            }
+            res++;
+        }
+        return res <= 0 ? -1 : res;
+    
 }

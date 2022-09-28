@@ -104,6 +104,52 @@ public class DFS {
             graph.get(edge[1]).add(edge[0]);
         }
         return graph;
+    } 
+
+
+    // ========================================================================================= 
+    // Largest Components 
+
+    // ==================================================================================
+    
+        List<List<Integer>> res = new LinkedList<>(); 
+        if(heights == null || heights.length == 0 || heights[0].length == 0) 
+            return res;
+        int n = heights.length; 
+        int m = heights[0].length; 
+        boolean[][] pacific = new boolean[n][m]; 
+        boolean[][] atlantic = new boolean[n][m]; 
+        
+        for(int i = 0; i < n; i++) { 
+            dfs(heights, pacific, Integer.MIN_VALUE, i, 0); 
+            dfs(heights, atlantic, Integer.MIN_VALUE, i, m-1); 
+        }
+        
+        for(int i = 0; i < m; i++) { 
+            dfs(heights, pacific, Integer.MIN_VALUE, 0, i); 
+            dfs(heights, atlantic, Integer.MIN_VALUE, n-1, i); 
+        }
+        
+        for(int i = 0; i < n; i++) { 
+            for(int j = 0; j < m; j++) { 
+                if(pacific[i][j] && atlantic[i][j]) 
+                    res.add(new ArrayList<>(Arrays.asList(i,j)));
+            }
+        }
+        return res;
+    }
+    
+    
+    int[][] dirs = new int[][] {{0,1},{0,-1},{1,0},{-1,0}}; 
+    public void dfs(int[][] grid, boolean[][] visited, int h, int x, int y) { 
+        if(x < 0 || y < 0 || x >= grid.length || y >= grid[0].length || grid[x][y] < h || visited[x][y]) 
+            return; 
+        visited[x][y] = true;
+        for(int[] dir : dirs) { 
+            int start = dir[0]; 
+            int end = dir[1]; 
+            dfs(grid, visited, grid[x][y], x + start, y + end);
+        }
     }
 
 }

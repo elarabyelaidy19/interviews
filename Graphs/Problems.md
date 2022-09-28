@@ -16,3 +16,6 @@
 
 # [number of subislands](https://leetcode.com/problems/number-of-sub-islands/)
 - **Flood Fill** common isla 
+
+# [as far from land as possible](https://leetcode.com/problems/as-far-from-land-as-possible/) 
+- **BFS** Algotithm, visit all 1s and update the distance to the farest 0.
