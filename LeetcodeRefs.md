@@ -11,4 +11,7 @@
 > OOP Main ideas. 
 
 ## [Graph Algorithms](https://leetcode.com/discuss/study-guide/2360573/become-master-in-graph)
-> Graph Algorithms.
+> Graph Algorithms. 
+
+# Binary Search 
+- [Binary Search](https://leetcode.com/problems/search-insert-position/discuss/249092/Come-on-forget-the-binary-search-patterntemplate!-Try-understand-it!) 
